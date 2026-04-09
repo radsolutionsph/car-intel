@@ -1,0 +1,10 @@
+title: View
+fields:
+  -
+    handle: rad_view
+    field:
+      hide_partials: false
+      folder: content
+      type: template
+      display: View
+      instructions: 'Content views are in ```resources/views/content```'

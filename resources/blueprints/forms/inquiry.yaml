@@ -1,0 +1,34 @@
+tabs:
+  main:
+    display: Main
+    sections:
+      -
+        fields:
+          -
+            handle: name
+            field:
+              display: Name
+              type: text
+              validate:
+                - required
+          -
+            handle: email
+            field:
+              input_type: email
+              display: Email
+              type: text
+              validate:
+                - required
+                - email
+          -
+            handle: phone
+            field:
+              display: Phone
+              type: text
+          -
+            handle: inquiry
+            field:
+              display: Inquiry
+              type: textarea
+              validate:
+                - required

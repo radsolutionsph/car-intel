@@ -1,0 +1,22 @@
+{{ if children }}
+    <li class="nav-item dropdown">
+        <a href="#" class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            {{ navigation_title or title }}
+        </a>
+        <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+            {{ children }}
+                <li>
+                    <a class="dropdown-item" href="{{ url }}">
+                        {{ navigation_title or title }}
+                    </a>
+                </li>
+            {{ /children }}
+        </ul>
+    </li>
+{{ else }}
+    <li class="nav-item">
+        <a href="{{ url }}" class="nav-link">
+            {{ navigation_title or title }}
+        </a>
+    </li>
+{{ /if }}

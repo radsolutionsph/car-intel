@@ -1,0 +1,66 @@
+title: Spacer
+fields:
+  -
+    handle: height
+    field:
+      type: text
+      display: Height
+      instructions: 'Height of spacer'
+      validate:
+        - required
+        - numeric
+        - 'gt:0'
+      width: 25
+  -
+    handle: unit
+    field:
+      options:
+        -
+          key: px
+          value: 'Pixels (px)'
+        -
+          key: em
+          value: 'Relative to font-size of element (em)'
+        -
+          key: rem
+          value: 'Relative to font-size of root element (rem)'
+      default: px
+      type: radio
+      instructions: '1 rem/em is typically equal to **16px** (depending on the browser default) but can be overridden by CSS styles.'
+      instructions_position: below
+      display: 'Height Unit'
+      width: 75
+  -
+    field:
+      display: 'View Options'
+      type: revealer
+      mode: toggle
+      instructions: 'Responsive & Schedule Options'
+    handle: options
+  -
+    field:
+      fullscreen: false
+      always_save: true
+      type: group
+      display: 'Responsive Options'
+      if:
+        options: 'equals true'
+      fields:
+        -
+          handle: display
+          field:
+            type: checkboxes
+            instructions: 'Set the responsive display options.'
+            options:
+              sm: 'Smaller phones'
+              md: 'Tablets & large smartphones'
+              lg: 'Laptops, small desktops & larger tablets in landscape'
+              xl: 'Desktops with larger monitors'
+            default:
+              - sm
+              - md
+              - lg
+              - xl
+            validate:
+              - required
+    handle: responsive_options

@@ -1,0 +1,175 @@
+title: 'Custom Button'
+fields:
+  -
+    handle: button_text
+    field:
+      display: 'Button Text'
+      type: text
+      width: 66
+      validate:
+        - required
+  -
+    handle: alignment
+    field:
+      options:
+        left: Left
+        center: Center
+        right: Right
+      clearable: true
+      display: Alignment
+      type: select
+      width: 33
+  -
+    handle: link_type
+    field:
+      options:
+        page: Page
+        asset: Asset
+        phone: Phone
+        email: Email
+        url: Url
+      clearable: true
+      display: 'Link Type'
+      type: select
+      width: 33
+      validate:
+        - required
+  -
+    handle: page
+    field:
+      max_items: 1
+      collections:
+        - pages
+      display: Page
+      type: entries
+      validate:
+        - required
+        - sometimes
+      width: 66
+      if:
+        link_type: 'equals page'
+  -
+    handle: asset
+    field:
+      mode: grid
+      container: assets
+      max_files: 1
+      display: Asset
+      type: assets
+      width: 66
+      validate:
+        - sometimes
+        - required
+      if:
+        link_type: 'equals asset'
+  -
+    handle: phone
+    field:
+      placeholder: '(05) 5555 5555'
+      display: Phone
+      type: text
+      width: 66
+      validate:
+        - sometimes
+        - required
+      if:
+        link_type: 'equals phone'
+  -
+    handle: email
+    field:
+      display: Email
+      type: text
+      width: 66
+      validate:
+        - sometimes
+        - required
+        - email
+      if:
+        link_type: 'equals email'
+  -
+    handle: url
+    field:
+      display: Url
+      type: text
+      width: 66
+      validate:
+        - sometimes
+        - required
+        - url
+      if:
+        link_type: 'equals url'
+  -
+    handle: new_tab
+    field:
+      display: 'Open In New Tab'
+      type: toggle
+  -
+    field:
+      display: 'View Options'
+      type: revealer
+      mode: toggle
+      instructions: 'Animate & Schedule Options'
+    handle: options
+  -
+    field:
+      fullscreen: false
+      always_save: true
+      type: group
+      display: 'Animate Options'
+      if:
+        options: 'equals true'
+      fields:
+        -
+          handle: delay
+          field:
+            append: ms
+            type: integer
+            display: Delay
+            instructions: 'Default 300ms'
+            width: 50
+            validate:
+              - 'gte:0'
+            unless:
+              $parent.wrap_options.enabled: 'equals false'
+        -
+          handle: type
+          field:
+            options:
+              disable: Disable
+              fadeIn: 'Fade In'
+              fadeInLeft: 'Fade In Left'
+              fadeInRight: 'Fade In Right'
+              fadeInUp: 'Fade In Up'
+            placeholder: 'Animation Type'
+            clearable: true
+            type: select
+            display: Type
+            instructions: 'Default Fade In Up'
+            width: 50
+            unless:
+              $parent.wrap_options.enabled: 'equals false'
+    handle: animate_options
+  -
+    field:
+      fullscreen: false
+      always_save: true
+      type: group
+      display: 'Schedule Options'
+      if:
+        options: 'equals true'
+      fields:
+        -
+          field:
+            time_enabled: true
+            type: date
+            display: Start
+            width: 50
+          handle: start
+        -
+          field:
+            time_enabled: true
+            type: date
+            display: End
+            width: 50
+          handle: end
+    handle: schedule_options

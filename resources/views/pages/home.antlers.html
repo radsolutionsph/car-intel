@@ -1,0 +1,56 @@
+{{ partial:pages/carousel }}
+<div class="content flex-grow-1">
+    {{ partial:_content }}
+    {{ slot }}
+    <div class="container">
+        {{ form:create in="inquiry" }}
+            
+            {{ if success }}
+                <div class="bg-green-100 text-green-800 p-4 mb-4">
+                    Success! We've received your inquiry.
+                </div>
+            {{ /if }}
+
+            {{ if errors }}
+                <div class="bg-red-100 text-red-800 p-4 mb-4">
+                    {{ errors }}
+                        <p>{{ value }}</p>
+                    {{ /errors }}
+                </div>
+            {{ /if }}
+            <div>
+                <fieldset :disabled="submitting || success">
+                    <div class="row">
+                        <div class="form-group col-sm-12 d-none">
+                            <label for="cell-phone" class="form-label"> Cell Phone </label>
+                            <input class="" type="text" id="cell_phone" name="cell_phone" value="{{ old:cell_phone }}">
+                        </div>
+                        <div class="form-group col-sm-12">
+                            <label for="name" class="form-label"> Name* </label>
+                            <input class="form-control" type="text" id="name" name="name" value="{{ old:name }}">
+                        </div>
+                        <div class="form-group col-sm-12">
+                            <label for="email" class="form-label"> Email* </label>
+                            <input class="form-control" type="text" id="email" name="email" value="{{ old:email }}">
+                        </div>
+                        <div class="form-group col-sm-12">
+                            <label for="phone" class="form-label"> Phone* </label>
+                            <input class="form-control" type="text" id="phone" name="phone" value="{{ old:phone }}">
+                        </div>
+                        <div class="form-group col-sm-12">
+                            <label for="inquiry" class="form-label"> Inquiry* </label>
+                            <textarea class="form-control" name="inquiry" id="inquiry" rows="5">{{ old:inquiry }}</textarea>
+
+                        <div class="form-group">
+                            <input
+                                class="form-control"
+                                type="submit"
+                                value="Submit"
+                            >
+                        </div>
+                    </div>
+                </fieldset>
+            </div>
+        {{ /form:create }}
+    </div>
+</div>

@@ -1,0 +1,98 @@
+.icon {
+    fill: currentColor;
+    width: 1em;
+    height: 1em;
+    vertical-align: -.125em;
+}
+
+.header, .footer {
+    padding: 1rem 0;
+    background-color: #808080 ;
+    a:not(.dropdown-item) {
+        color: white;
+        text-decoration: none;
+        transition: opacity 0.3s ease;
+        &:hover {
+            opacity: 0.8;
+        }
+    }
+
+    .navbar-brand {
+        padding: 0;
+        .icon {
+            font-size: 5rem;
+        }
+    }
+}
+
+.navbar {
+    .navbar-toggler {
+        border: none;
+        &:focus {
+            box-shadow: none;
+        }
+        &:hover {
+            opacity: 0.8;
+        }
+    }
+}
+
+.menu-open {
+    .navbar-toggler {
+        order: unset !important;
+    }
+}
+
+.img-fluid {
+    max-width: 100%;
+    height: auto
+}
+
+.content {
+    //adds spacing at top of the content (ignoring carousel)
+    & > :nth-child(1 of div.container) {
+        margin-top: 2rem;
+    }
+    
+    // spacing
+    img, table, video, .gallery, .btn {
+        margin: 1rem 0;
+    }
+
+    blockquote {
+        padding: 1rem 2rem;
+        margin: 0 3rem;
+        border-radius: 0.5rem;
+    }
+    hr {
+        border: none;
+        height: 2px;
+        margin: 2rem 0;
+        background-color: #000;
+        opacity: 1;
+    }
+    .btn {
+        border: none;
+    }
+    .highlight-group {
+        padding: 2rem 0;
+        margin: 2rem 0;
+        p:last-of-type {
+            margin-bottom: 0;
+        }
+        a {
+            color: white;
+        }
+        .btn {
+            border: 1px solid white;
+        }
+    }
+}
+
+.footer {
+    margin-top: auto;
+    font-size: 0.8rem;
+    .icon {
+        margin-right: 0.5rem;
+    }
+}

@@ -1,0 +1,7 @@
+<div class="row">
+    {{ columns }}
+        <div class="{{ column_options.width }} {{ column_options.offset }}">
+            {{ partial src="_content" in_container="true" :disable_wrap="disable_wrap" }}
+        </div>
+    {{ /columns }}
+</div>

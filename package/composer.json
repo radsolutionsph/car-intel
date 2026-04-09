@@ -1,0 +1,24 @@
+{
+    "name": "radsolutions/rad-starter-kit",
+    "extra": {
+        "statamic": {
+            "name": "Rad Starter Kit",
+            "description": "Starting point for common website builds"
+        },
+        "laravel": {
+            "providers": [
+                "Radsolutions\\RadStarterKit\\ServiceProvider"
+            ]
+        }
+    },
+    "autoload": {
+        "psr-4": {
+            "Radsolutions\\RadStarterKit\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Tests\\": "tests"
+        }
+    }
+}

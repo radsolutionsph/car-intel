@@ -1,0 +1,291 @@
+title: Image
+fields:
+  -
+    handle: image
+    field:
+      max_files: 1
+      display: Image
+      type: assets
+      container: assets
+      validate:
+        - required
+        - image
+  -
+    field:
+      display: 'View Options'
+      type: revealer
+      mode: toggle
+      instructions: 'Lightbox, Image, Link, Schedule & Animate Options'
+    handle: options
+  -
+    field:
+      fullscreen: false
+      always_save: true
+      type: group
+      display: 'Lightbox Options'
+      if:
+        options: 'equals true'
+        link_options.link_type: 'is empty'
+      fields:
+        -
+          handle: disable_click_enlarge
+          field:
+            type: toggle
+            display: 'Disable Click Enlarge'
+            width: 50
+        -
+          handle: disable_caption
+          field:
+            type: toggle
+            display: 'Disable Caption'
+            width: 50
+            instructions: "Do not use the image 'Alt' value as caption (if set)."
+            unless:
+              disable_click_enlarge: true
+    handle: lightbox_options
+  -
+    field:
+      fullscreen: false
+      always_save: true
+      type: group
+      display: 'Image Options'
+      if:
+        options: 'equals true'
+      fields:
+        -
+          handle: caption
+          field:
+            type: toggle
+            default: false
+            display: Caption
+            width: 33
+            instructions: "Use the image 'Alt' value as caption (if set)."
+        -
+          handle: alignment
+          field:
+            options:
+              left: Left
+              center: Center
+              right: Right
+            type: select
+            display: Alignment
+            width: 33
+            clearable: true
+            searchable: false
+        -
+          handle: max_width
+          field:
+            append: px
+            type: integer
+            display: 'Max Width'
+            width: 33
+            validate:
+              - 'gt:1'
+              - 'lte:2048'
+        -
+          handle: max_height
+          field:
+            append: px
+            type: integer
+            display: 'Max Height'
+            width: 33
+            validate:
+              - 'gt:1'
+              - 'lte:2048'
+        -
+          handle: fit
+          field:
+            options:
+              -
+                key: contain
+                value: Contain
+              -
+                key: crop_focal
+                value: Crop
+            default: contain
+            type: radio
+            display: Fit
+            width: 33
+    handle: image_options
+  -
+    field:
+      fullscreen: false
+      always_save: true
+      type: group
+      display: Link
+      if:
+        options: 'equals true'
+      fields:
+        -
+          handle: link_type
+          field:
+            options:
+              page: Page
+              asset: Asset
+              entry: Entry
+              term: Term
+              phone: Phone
+              email: Email
+              url: Url
+            clearable: true
+            display: 'Link Type'
+            type: select
+            width: 33
+        -
+          handle: page
+          field:
+            max_items: 1
+            collections:
+              - pages
+            display: Page
+            type: entries
+            validate:
+              - required
+              - sometimes
+            width: 66
+            if:
+              link_type: 'equals page'
+        -
+          handle: entry
+          field:
+            max_items: 1
+            display: Entry
+            type: entries
+            validate:
+              - sometimes
+              - required
+            width: 66
+            if:
+              link_type: 'equals entry'
+        -
+          handle: term
+          field:
+            max_items: 1
+            create: false
+            display: Term
+            type: terms
+            validate:
+              - required
+              - sometimes
+            width: 66
+            if:
+              link_type: 'equals term'
+        -
+          handle: asset
+          field:
+            mode: grid
+            container: assets
+            max_files: 1
+            display: Asset
+            type: assets
+            width: 66
+            validate:
+              - sometimes
+              - required
+            if:
+              link_type: 'equals asset'
+        -
+          handle: phone
+          field:
+            placeholder: '(05) 5555 5555'
+            display: Phone
+            type: text
+            width: 66
+            validate:
+              - sometimes
+              - required
+            if:
+              link_type: 'equals phone'
+        -
+          handle: email
+          field:
+            display: Email
+            type: text
+            width: 66
+            validate:
+              - sometimes
+              - required
+              - email
+            if:
+              link_type: 'equals email'
+        -
+          handle: url
+          field:
+            display: Url
+            type: text
+            width: 66
+            validate:
+              - sometimes
+              - required
+              - url
+            if:
+              link_type: 'equals url'
+        -
+          handle: new_tab
+          field:
+            display: 'Open In New Tab'
+            type: toggle
+    handle: link_options
+  -
+    field:
+      fullscreen: false
+      always_save: true
+      type: group
+      display: 'Schedule Options'
+      if:
+        options: 'equals true'
+      fields:
+        -
+          field:
+            time_enabled: true
+            type: date
+            display: Start
+            width: 50
+          handle: start
+        -
+          field:
+            time_enabled: true
+            type: date
+            display: End
+            width: 50
+          handle: end
+    handle: schedule_options
+  -
+    field:
+      fullscreen: false
+      always_save: true
+      type: group
+      display: 'Animate Options'
+      if:
+        options: 'equals true'
+      fields:
+        -
+          handle: delay
+          field:
+            append: ms
+            type: integer
+            display: Delay
+            instructions: 'Default 300ms'
+            width: 50
+            validate:
+              - 'gte:0'
+            unless:
+              $parent.wrap_options.enabled: 'equals false'
+        -
+          handle: type
+          field:
+            options:
+              disable: Disable
+              fadeIn: 'Fade In'
+              fadeInLeft: 'Fade In Left'
+              fadeInRight: 'Fade In Right'
+              fadeInUp: 'Fade In Up'
+            placeholder: 'Animation Type'
+            clearable: true
+            type: select
+            display: Type
+            instructions: 'Default Fade In Up'
+            width: 50
+            unless:
+              $parent.wrap_options.enabled: 'equals false'
+    handle: animate_options

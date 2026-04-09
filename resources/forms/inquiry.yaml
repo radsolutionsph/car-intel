@@ -1,0 +1,8 @@
+title: Inquiry
+honeypot: cell_phone
+email:
+  -
+    id: qvX2YAKz
+    to: info@radsolutionsph.com
+    reply_to: '{{ email }}'
+    subject: 'Website Inquiry'

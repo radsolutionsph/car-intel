@@ -1,0 +1,33 @@
+<div class="table-responsive">
+    <table class="table table-striped">
+        {{ table }}
+            {{ if first && table_headers == "top" }}
+                <thead>
+                    <tr>
+                        {{ cells }}
+                            <th>{{ value }}</th>
+                        {{ /cells }}
+                    </tr>
+                </thead>
+                <tbody>
+            {{ /if }}
+            {{ if !first && table_headers == "top" || table_headers != "top" }}
+                {{ if first }}
+                    <tbody>
+                {{ /if }}
+                <tr>
+                    {{ cells }}
+                        {{ if first && table_headers == "left" }}
+                            <th>{{ value }}</th>
+                        {{ else }}
+                            <td>{{ value }}</td>
+                        {{ /if }}
+                    {{ /cells }}
+                </tr>
+                {{ if last }}
+                    </tbody>
+                {{ /if }}
+            {{ /if }}
+        {{ /table }}
+    </table>
+</div>

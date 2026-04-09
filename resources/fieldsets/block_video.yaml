@@ -1,0 +1,62 @@
+title: Video
+fields:
+  -
+    handle: video_type
+    field:
+      options:
+        external: 'External video (hosted on Youtube etc.)'
+        internal: 'Internal video (hosted on site)'
+      default: external
+      display: 'Video Type'
+      type: radio
+      width: 50
+  -
+    handle: video_ratio
+    field:
+      options:
+        16x9: '16:9'
+        4x3: '4:3'
+      default: 16x9
+      display: 'Video Ratio'
+      type: radio
+      width: 50
+  -
+    handle: internal_video
+    field:
+      type: assets
+      container: assets
+      folder: /
+      max_files: 1
+      display: 'Internal Video'
+      if:
+        video_type: 'equals internal'
+      validate:
+        - 'mimes:mp4,webm,ogg'
+  -
+    handle: external_video
+    field:
+      type: video
+      display: 'External Video'
+      if:
+        video_type: 'equals external'
+  -
+    handle: popup
+    field:
+      instructions: 'Popup this video (otherwise embedded).'
+      type: toggle
+      display: Popup
+      width: 33
+  -
+    handle: popup_thumbnail
+    field:
+      type: assets
+      max_files: 1
+      display: 'Popup Thumbnail'
+      container: assets
+      validate:
+        - required
+        - sometimes
+        - image
+      width: 66
+      if:
+        popup: 'equals true'

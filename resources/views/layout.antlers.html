@@ -1,0 +1,33 @@
+<!doctype html>
+<html class="no-js" lang="{{ site:short_locale }}">
+    <head>
+        <meta charset="utf-8">
+        <title>{{ potent_title }}</title>
+
+        <meta property="og:title" content="{{ {{ title }} | smartypants }}">
+        <meta property="og:url" content="{{ current_url }}">
+        <meta property="og:image" content="">
+        <meta property="og:image:width" content=""> 
+        <meta property="og:image:height" content="">
+        <meta property="og:type" content="website">
+
+        <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
+        <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+        <link rel="shortcut icon" href="/favicon.ico" />
+        <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+        <link rel="manifest" href="/site.webmanifest" />
+
+        <link rel="canonical" href="{{ current_url }}">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        {{ vite src="resources/js/app.js|resources/scss/app.scss" }}
+        <script>(function(h){h.className = h.className.replace('no-js', 'js')})(document.documentElement)</script>
+    </head>
+    <body>
+        <div class="d-flex flex-column vh-100">
+            {{ partial:pages/header }}
+            {{ template_content }}
+            {{ partial:pages/footer }}
+        </div>
+        {{ stack:end }}
+    </body>
+</html>

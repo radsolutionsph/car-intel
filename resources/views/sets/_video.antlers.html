@@ -1,0 +1,27 @@
+{{ if video_type == 'internal' }}
+    {{ assets:internal_video }}
+        {{ if popup_link_thumbnail }}
+            <a class="lightbox-embed" href="{{ internal_video }}">
+                <img src="{{ glide :src="popup_link_thumbnail" }}" class="img-fluid" alt="{{ popup_link_thumbnail | get:alt }}">
+            </a>
+        {{ else }}
+            <div class="embed-responsive embed-responsive-{{ video_ratio }}">
+                <video src="{{ internal_video | embed_url }}" class="embed-responsive-item" controls="" controlsList="nodownload"></video>
+            </div>
+        {{ /if }}
+    {{ /assets:internal_video }}
+{{ else }}
+    {{ if popup_link_thumbnail }}
+        <a class="lightbox-embed" href="{{ external_video }}">
+            <img src="{{ glide :src="popup_link_thumbnail" }}" class="img-fluid" alt="{{ popup_link_thumbnail | get:alt }}">
+        </a>
+    {{ else }}
+        <div class="embed-responsive embed-responsive-{{ video_ratio }}">
+            {{ if external_video | is_embeddable }}
+                <iframe src="{{ external_video | embed_url }}" class="embed-responsive-item"></iframe>
+            {{ else }}
+                <video src="{{ external_video | embed_url }}" class="embed-responsive-item" controls="" controlsList="nodownload"></video>
+            {{ /if }}
+        </div>
+    {{ /if }}
+{{ /if }}

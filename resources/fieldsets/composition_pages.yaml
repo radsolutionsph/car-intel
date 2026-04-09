@@ -1,0 +1,276 @@
+title: 'Pages Composition'
+fields:
+  -
+    handle: composition
+    field:
+      display: Composition
+      type: replicator
+      sets:
+        main:
+          display: Main
+          sets:
+            columns:
+              display: Columns
+              fields:
+                -
+                  handle: columns
+                  field:
+                    type: replicator
+                    display: Columns
+                    sets:
+                      main:
+                        display: Main
+                        sets:
+                          column:
+                            display: Column
+                            fields:
+                              -
+                                handle: composition
+                                field:
+                                  display: Composition
+                                  type: replicator
+                                  sets:
+                                    custom_button:
+                                      display: 'Custom Button'
+                                      fields:
+                                        -
+                                          import: block_custom_button
+                                    form:
+                                      display: Form
+                                      fields:
+                                        -
+                                          import: block_form
+                                    gallery:
+                                      display: Gallery
+                                      fields:
+                                        -
+                                          import: block_gallery
+                                    image:
+                                      display: Image
+                                      fields:
+                                        -
+                                          import: block_image
+                                    line:
+                                      display: Line
+                                      fields:
+                                        -
+                                          import: block_line
+                                    pdf_viewer:
+                                      display: 'Pdf Viewer'
+                                      fields:
+                                        -
+                                          import: block_pdf_viewer
+                                    rich_text:
+                                      display: 'Rich Text'
+                                      fields:
+                                        -
+                                          import: block_rich_text
+                                    spacer:
+                                      display: Spacer
+                                      fields:
+                                        -
+                                          import: block_spacer
+                                    table:
+                                      display: Table
+                                      fields:
+                                        -
+                                          import: block_table
+                                    video:
+                                      display: Video
+                                      fields:
+                                        -
+                                          import: block_video
+                                    view:
+                                      display: View
+                                      fields:
+                                        -
+                                          import: block_view
+                              -
+                                handle: options
+                                field:
+                                  display: 'View Options'
+                                  type: revealer
+                                  mode: toggle
+                                  instructions: 'Column Options'
+                              -
+                                handle: column_options
+                                field:
+                                  fullscreen: false
+                                  always_save: true
+                                  type: group
+                                  display: 'Column Options'
+                                  if:
+                                    options: 'equals true'
+                                  fields:
+                                    -
+                                      handle: width
+                                      field:
+                                        options:
+                                          -
+                                            key: col-lg-3
+                                            value: 25%
+                                          -
+                                            key: col-lg-4
+                                            value: 33%
+                                          -
+                                            key: col-lg-6
+                                            value: 50%
+                                          -
+                                            key: col-lg-8
+                                            value: 66%
+                                          -
+                                            key: col-lg-9
+                                            value: 75%
+                                        type: select
+                                        display: Width
+                                        instructions: 'Leave blank to automatically adjust width by the number of columns.'
+                                        instructions_position: below
+                                        width: 33
+                                        clearable: true
+                                        validate:
+                                          - required
+                                    -
+                                      handle: offset
+                                      field:
+                                        options:
+                                          -
+                                            key: offset-lg-2
+                                            value: 17%
+                                          -
+                                            key: offset-lg-3
+                                            value: 25%
+                                          -
+                                            key: offset-lg-4
+                                            value: 33%
+                                        type: select
+                                        display: Offset
+                                        width: 33
+                                        clearable: true
+                                    -
+                                      handle: reorder
+                                      field:
+                                        options:
+                                          first: 'Position First'
+                                          last: 'Position Last'
+                                        type: select
+                                        display: Reorder
+                                        instructions: 'Set the column position to override order on desktop, the logical order will then be used in mobile view.'
+                                        instructions_position: below
+                                        width: 33
+                                        clearable: true
+                -
+                  handle: options
+                  field:
+                    display: 'View Options'
+                    type: revealer
+                    mode: toggle
+                    instructions: 'Columns Responsive & Schedule Options'
+                -
+                  handle: columns_responsive_options
+                  field:
+                    fullscreen: false
+                    always_save: true
+                    type: group
+                    display: 'Responsive Options'
+                    if:
+                      options: 'equals true'
+                    fields:
+                      -
+                        handle: stack
+                        field:
+                          type: select
+                          width: 50
+                          instructions: 'Columns are "stacked" until this width.'
+                          options:
+                            sm: 'Smaller phones'
+                            md: 'Tablets & large smartphones'
+                            lg: 'Laptops, small desktops & larger tablets in landscape'
+                            xl: 'Desktops with larger monitors'
+                          default: lg
+                          validate:
+                            - required
+                -
+                  handle: schedule_options
+                  field:
+                    fullscreen: false
+                    always_save: true
+                    type: group
+                    display: 'Schedule Options'
+                    if:
+                      options: 'equals true'
+                    fields:
+                      -
+                        field:
+                          time_enabled: true
+                          type: date
+                          display: Start
+                          width: 50
+                        handle: start
+                      -
+                        field:
+                          time_enabled: true
+                          type: date
+                          display: End
+                          width: 50
+                        handle: end
+            custom_button:
+              display: 'Custom Button'
+              fields:
+                -
+                  import: block_custom_button
+            form:
+              display: Form
+              fields:
+                -
+                  import: block_form
+            gallery:
+              display: Gallery
+              fields:
+                -
+                  import: block_gallery
+            image:
+              display: Image
+              fields:
+                -
+                  import: block_image
+            line:
+              display: Line
+              fields:
+                -
+                  import: block_line
+            pdf_viewer:
+              display: 'Pdf Viewer'
+              fields:
+                -
+                  import: block_pdf_viewer
+            rich_text:
+              display: 'Rich Text'
+              fields:
+                -
+                  import: block_rich_text
+            spacer:
+              display: Spacer
+              fields:
+                -
+                  import: block_spacer
+            table:
+              display: Table
+              fields:
+                -
+                  import: block_table
+            video:
+              display: Video
+              fields:
+                -
+                  import: block_video
+            view:
+              display: View
+              fields:
+                -
+                  import: block_view
+  -
+    handle: composition_name
+    field:
+      default: pages
+      type: hidden
+      display: 'Composition Name'

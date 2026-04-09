@@ -1,0 +1,16 @@
+title: Table
+fields:
+  -
+    handle: table_headers
+    field:
+      type: select
+      options:
+        none: None
+        top: Top
+        left: Left
+      display: 'Table Headers'
+  -
+    handle: table
+    field:
+      type: table
+      display: Table

@@ -1,0 +1,25 @@
+{
+    "$schema": "https://www.schemastore.org/package.json",
+    "private": true,
+    "type": "module",
+    "scripts": {
+        "build": "vite build",
+        "dev": "vite",
+        "watch": "vite"
+    },
+    "devDependencies": {
+        "@alpinejs/collapse": "3.14.9",
+        "@alpinejs/focus": "3.14.3",
+        "@erbelion/vite-plugin-laravel-purgecss": "^0.3.4",
+        "alpinejs": "3.14.3",
+        "animate.css": "4.1.1",
+        "axios": "1.7.7",
+        "bootstrap": "5.3.6",
+        "concurrently": "^9.0.1",
+        "glightbox": "3.3.0",
+        "laravel-vite-plugin": "^1.2.0",
+        "sass": "1.77.6",
+        "swiper": "11.2.6",
+        "vite": "^6.0.11"
+    }
+}

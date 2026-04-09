@@ -1,0 +1,9 @@
+{{# Note we don't check for override here automatically due to the potential to create loops #}}
+{{ if composition }}
+    {{ $content = composition }}
+    {{ $content }}
+        <div class="container">
+            {{ partial:sets/{type} }}
+        </div>
+    {{ /$content }}
+{{ /if }}

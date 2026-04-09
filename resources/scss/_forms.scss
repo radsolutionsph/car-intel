@@ -1,0 +1,95 @@
+// TODO: pluginize the loaders
+$group-margin: .75rem !default;
+$instruction-margin: .25rem !default;
+$loader-color: $primary !default;
+
+.potent-forms {
+    position: relative;
+
+    fieldset:disabled {
+        transition: opacity 1s;
+        opacity: 0.3;
+
+        .form-control {
+            background-color: $body-bg;
+        }
+    }
+
+    .form-text {
+        // helps with spacing on instructions
+        p {
+            margin-bottom: $instruction-margin;
+        }
+    }
+
+    .form-group {
+        margin-bottom: $group-margin;
+    }
+
+    // https://css-loaders.com/spinner/
+    // TODO: add more spinners
+    .loader {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 50px;
+        aspect-ratio: 1;
+        border-radius: 50%;
+        border: 8px solid $loader-color;
+        animation:
+            l20-1 0.8s infinite linear alternate,
+            l20-2 1.6s infinite linear;
+    }
+}
+
+@keyframes l20-1 {
+    0% {
+        clip-path: polygon(50% 50%, 0 0, 50% 0%, 50% 0%, 50% 0%, 50% 0%, 50% 0%)
+    }
+
+    12.5% {
+        clip-path: polygon(50% 50%, 0 0, 50% 0%, 100% 0%, 100% 0%, 100% 0%, 100% 0%)
+    }
+
+    25% {
+        clip-path: polygon(50% 50%, 0 0, 50% 0%, 100% 0%, 100% 100%, 100% 100%, 100% 100%)
+    }
+
+    50% {
+        clip-path: polygon(50% 50%, 0 0, 50% 0%, 100% 0%, 100% 100%, 50% 100%, 0% 100%)
+    }
+
+    62.5% {
+        clip-path: polygon(50% 50%, 100% 0, 100% 0%, 100% 0%, 100% 100%, 50% 100%, 0% 100%)
+    }
+
+    75% {
+        clip-path: polygon(50% 50%, 100% 100%, 100% 100%, 100% 100%, 100% 100%, 50% 100%, 0% 100%)
+    }
+
+    100% {
+        clip-path: polygon(50% 50%, 50% 100%, 50% 100%, 50% 100%, 50% 100%, 50% 100%, 0% 100%)
+    }
+}
+
+@keyframes l20-2 {
+    0% {
+        transform: scaleY(1) rotate(0deg)
+    }
+
+    49.99% {
+        transform: scaleY(1) rotate(135deg)
+    }
+
+    50% {
+        transform: scaleY(-1) rotate(0deg)
+    }
+
+    100% {
+        transform: scaleY(-1) rotate(-135deg)
+    }
+}
+
+// .form-control-file {
+//   height: auto;
+// }

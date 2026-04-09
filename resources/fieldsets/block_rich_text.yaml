@@ -1,0 +1,93 @@
+title: Richtext
+fields:
+  -
+    handle: rich_text
+    field:
+      buttons:
+        - h1
+        - h2
+        - h3
+        - bold
+        - italic
+        - unorderedlist
+        - orderedlist
+        - removeformat
+        - quote
+        - anchor
+        - alignleft
+        - aligncenter
+        - alignright
+      remove_empty_nodes: false
+      display: Richtext
+      type: bard
+      container: assets
+  -
+    field:
+      display: 'View Options'
+      type: revealer
+      mode: toggle
+      instructions: 'Animate & Schedule Options'
+    handle: options
+  -
+    field:
+      fullscreen: false
+      always_save: true
+      type: group
+      display: 'Animate Options'
+      if:
+        options: 'equals true'
+      fields:
+        -
+          handle: delay
+          field:
+            append: ms
+            type: integer
+            display: Delay
+            instructions: 'Default 300ms'
+            width: 50
+            validate:
+              - 'gte:0'
+            unless:
+              $parent.wrap_options.enabled: 'equals false'
+        -
+          handle: type
+          field:
+            options:
+              disable: Disable
+              fadeIn: 'Fade In'
+              fadeInLeft: 'Fade In Left'
+              fadeInRight: 'Fade In Right'
+              fadeInUp: 'Fade In Up'
+            placeholder: 'Animation Type'
+            clearable: true
+            type: select
+            display: Type
+            instructions: 'Default Fade In Up'
+            width: 50
+            unless:
+              $parent.wrap_options.enabled: 'equals false'
+    handle: animate_options
+  -
+    field:
+      fullscreen: false
+      always_save: true
+      type: group
+      display: 'Schedule Options'
+      if:
+        options: 'equals true'
+      fields:
+        -
+          field:
+            time_enabled: true
+            type: date
+            display: Start
+            width: 50
+          handle: start
+        -
+          field:
+            time_enabled: true
+            type: date
+            display: End
+            width: 50
+          handle: end
+    handle: schedule_options

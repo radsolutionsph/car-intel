@@ -1,0 +1,68 @@
+title: 'PDF Viewer'
+fields:
+  -
+    handle: pdf_embed
+    field:
+      theme: material
+      mode: htmlmixed
+      mode_selectable: false
+      indent_type: tabs
+      indent_size: 4
+      key_map: default
+      line_numbers: true
+      line_wrapping: true
+      display: 'Calameo Embed Code'
+      type: code
+      icon: code
+      listable: hidden
+      instructions_position: above
+      validate:
+        - required
+        - pdf_embed_code
+      visibility: visible
+  -
+    handle: height
+    field:
+      input_type: text
+      append: px
+      antlers: false
+      display: Height
+      type: text
+      icon: text
+      listable: hidden
+      instructions_position: above
+      visibility: visible
+      placeholder: 400
+      validate:
+        - numeric
+  -
+    field:
+      display: 'View Options'
+      type: revealer
+      mode: toggle
+      instructions: 'Schedule Options'
+    handle: options
+  -
+    field:
+      fullscreen: false
+      always_save: true
+      type: group
+      display: 'Schedule Options'
+      if:
+        options: 'equals true'
+      fields:
+        -
+          field:
+            time_enabled: true
+            type: date
+            display: Start
+            width: 50
+          handle: start
+        -
+          field:
+            time_enabled: true
+            type: date
+            display: End
+            width: 50
+          handle: end
+    handle: schedule_options
