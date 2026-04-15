@@ -70,6 +70,15 @@ return [
             'report' => false,
         ],
 
+        'public-images' => [
+            'driver' => 'local',
+            'root' => public_path('images'),
+            'url' => env('ASSET_URL', '').'/images',
+            'visibility' => 'public',
+            'throw' => false,
+            'report' => false,
+        ],
+
     ],
 
     /*

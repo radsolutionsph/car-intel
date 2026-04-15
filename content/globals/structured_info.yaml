@@ -1,0 +1,8 @@
+title: 'Structured Info'
+data:
+  business_name: 'Car Intel'
+  website_description: 'Autoshop Service'
+  social:
+    -
+      id: mo02on0a
+      same_as: 'https://www.facebook.com/profile.php?id=61574370730499'

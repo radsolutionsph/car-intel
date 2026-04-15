@@ -1,56 +1,196 @@
 {{ partial:pages/carousel }}
-<div class="content flex-grow-1">
+<div class="content flex-grow-1 home">
     {{ partial:_content }}
     {{ slot }}
-    <div class="container">
-        {{ form:create in="inquiry" }}
-            
-            {{ if success }}
-                <div class="bg-green-100 text-green-800 p-4 mb-4">
-                    Success! We've received your inquiry.
+    <div class="home-intro">
+        <div class="container h-100">
+            <div class="intro-wrapper row h-100">
+                <div class="col-lg-5">
+                    <div class="intro-text">
+                        <h1>Catchphrase Text Work in Progress</h1>
+                        <p>
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse.
+                        </p>
+                    </div>
                 </div>
-            {{ /if }}
-
-            {{ if errors }}
-                <div class="bg-red-100 text-red-800 p-4 mb-4">
-                    {{ errors }}
-                        <p>{{ value }}</p>
-                    {{ /errors }}
+                <div class="col-lg-7">
+                    <div class="intro-btn text-end">
+                        <a href="{{ link:76684dea-97c0-440e-b069-819ceefa8e0a }}" class="btn btn-primary">Contact Us Today</a>
+                    </div>
+                    <div class="intro-image">
+                        {{ asset src="public-images::red-civic.png" }}
+                            <img class="img-fluid" src="{{ url }}" alt="Car Intel">
+                        {{ /asset }}
+                    </div>
                 </div>
-            {{ /if }}
-            <div>
-                <fieldset :disabled="submitting || success">
-                    <div class="row">
-                        <div class="form-group col-sm-12 d-none">
-                            <label for="cell-phone" class="form-label"> Cell Phone </label>
-                            <input class="" type="text" id="cell_phone" name="cell_phone" value="{{ old:cell_phone }}">
-                        </div>
-                        <div class="form-group col-sm-12">
-                            <label for="name" class="form-label"> Name* </label>
-                            <input class="form-control" type="text" id="name" name="name" value="{{ old:name }}">
-                        </div>
-                        <div class="form-group col-sm-12">
-                            <label for="email" class="form-label"> Email* </label>
-                            <input class="form-control" type="text" id="email" name="email" value="{{ old:email }}">
-                        </div>
-                        <div class="form-group col-sm-12">
-                            <label for="phone" class="form-label"> Phone* </label>
-                            <input class="form-control" type="text" id="phone" name="phone" value="{{ old:phone }}">
-                        </div>
-                        <div class="form-group col-sm-12">
-                            <label for="inquiry" class="form-label"> Inquiry* </label>
-                            <textarea class="form-control" name="inquiry" id="inquiry" rows="5">{{ old:inquiry }}</textarea>
-
-                        <div class="form-group">
-                            <input
-                                class="form-control"
-                                type="submit"
-                                value="Submit"
-                            >
+            </div>
+        </div>
+    </div>
+    <div class="home-services">
+        <div class="container">
+            <div class="services-header">
+                <p class="service-company">Car Intel</p>
+                <h1>Services</h1>
+                <h3>Let us handle the dirty work <br>so you dont have to!</h3>
+            </div>
+            <div class="services-grids">
+                <div class="row">
+                    <div class="col-lg-4">
+                        <div class="service">
+                            <div class="service-title">
+                                Engine Services
+                            </div>
+                            <div class="service-intro">
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse.
+                            </div>
+                            <div class="service-btn-icon">
+                                <a href="{{ link:76684dea-97c0-440e-b069-819ceefa8e0a }}" class="btn btn-primary">Learn More {{ svg src="right-arrow" class="icon" }}</a>
+                                {{ asset src="public-images::service-icon.png" }}
+                                    <img class="img-fluid" src="{{ url }}" alt="Engine Services">
+                                {{ /asset }}
+                            </div>
                         </div>
                     </div>
-                </fieldset>
+                    <div class="col-lg-4">
+                        <div class="service">
+                            <div class="service-title">
+                                Transmission Services
+                            </div>
+                            <div class="service-intro">
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse.
+                            </div>
+                            <div class="service-btn-icon">
+                                <a href="{{ link:76684dea-97c0-440e-b069-819ceefa8e0a }}" class="btn btn-primary">Learn More {{ svg src="right-arrow" class="icon" }}</a>
+                                {{ asset src="public-images::service-icon.png" }}
+                                    <img class="img-fluid" src="{{ url }}" alt="Engine Services">
+                                {{ /asset }}
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="service">
+                            <div class="service-title">
+                                Brake Repair Services
+                            </div>
+                            <div class="service-intro">
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse.
+                            </div>
+                            <div class="service-btn-icon">
+                                <a href="{{ link:76684dea-97c0-440e-b069-819ceefa8e0a }}" class="btn btn-primary">Learn More {{ svg src="right-arrow" class="icon" }}</a>
+                                {{ asset src="public-images::service-icon.png" }}
+                                    <img class="img-fluid" src="{{ url }}" alt="Engine Services">
+                                {{ /asset }}
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="service">
+                            <div class="service-title">
+                                Aircon Services
+                            </div>
+                            <div class="service-intro">
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse.
+                            </div>
+                            <div class="service-btn-icon">
+                                <a href="{{ link:76684dea-97c0-440e-b069-819ceefa8e0a }}" class="btn btn-primary">Learn More {{ svg src="right-arrow" class="icon" }}</a>
+                                {{ asset src="public-images::service-icon.png" }}
+                                    <img class="img-fluid" src="{{ url }}" alt="Engine Services">
+                                {{ /asset }}
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="service">
+                            <div class="service-title">
+                                Tires and Wheels
+                            </div>
+                            <div class="service-intro">
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse.
+                            </div>
+                            <div class="service-btn-icon">
+                                <a href="{{ link:76684dea-97c0-440e-b069-819ceefa8e0a }}" class="btn btn-primary">Learn More {{ svg src="right-arrow" class="icon" }}</a>
+                                {{ asset src="public-images::service-icon.png" }}
+                                    <img class="img-fluid" src="{{ url }}" alt="Engine Services">
+                                {{ /asset }}
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="service">
+                            <div class="service-title">
+                                Preventive Maitenance Services (PMS)
+                            </div>
+                            <div class="service-intro">
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse.
+                            </div>
+                            <div class="service-btn-icon">
+                                <a href="{{ link:76684dea-97c0-440e-b069-819ceefa8e0a }}" class="btn btn-primary">Learn More {{ svg src="right-arrow" class="icon" }}</a>
+                                {{ asset src="public-images::service-icon.png" }}
+                                    <img class="img-fluid" src="{{ url }}" alt="Engine Services">
+                                {{ /asset }}
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-        {{ /form:create }}
+        </div>
+    </div>
+    <div class="home-cta">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4">
+                    <div class="get-quote d-flex align-items-center justify-content-center">
+                        {{ asset src="public-images::service-icon.png" }}
+                            <img class="img-fluid cta-icon" src="{{ url }}" alt="Car Intel Free Quotation">
+                        {{ /asset }}
+                        <div class="cta-content">
+                            <h3>Get a free service quotation!</h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="call-us d-flex align-items-center justify-content-center">
+                        {{ asset src="public-images::call-icon.png" }}
+                            <img class="img-fluid cta-icon" src="{{ url }}" alt="Car Intel Contact Numbers">
+                        {{ /asset }}
+                        <div class="cta-content">
+                            <h3>Call Us!</h3>
+                            <p class="mb-0">Mobile Phone: (+639) 43 237 0819</p>
+                            <p class="mb-0">Landline: (02) 222 2222</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="message-us d-flex align-items-center justify-content-center">
+                        {{ asset src="public-images::message-icon.png" }}
+                            <img class="img-fluid cta-icon" src="{{ url }}" alt="Car Intel Socials">
+                        {{ /asset }}
+                        <div class="cta-content">
+                            <h3>Send us a message!</h3>
+                            <div class="socials">
+                                <a href="#" class="social-icons">{{ svg src="envelope" class="icon" }}</a>
+                                <a href="#" class="social-icons">{{ svg src="facebook-f" class="icon" }}</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="home-location">
+            <div class="location-details">
+                <div class="wrapper">
+                    <p class="company">Car Intel</p>
+                    <h1>Where to Find Us</h1>
+                    <p class="location-address">Lorem ipsum dolor sit amet consectetur adipisicing elit at <b>Lot 1 Advincula Rd. Brgy. San Sebastian, Kawit, Cavite, Philippines</b></p>
+                    <p>Operating Hours: 7:00AM to 8:00PM</p>
+                </div>
+                <a href="#" class="btn btn-primary">Contact Us {{ svg src="right-arrow" class="icon" }}</a>
+            </div>
+            <div class="location-map">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3864.3041216002157!2d120.902257!3d14.409623999999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMTTCsDI0JzM0LjciTiAxMjDCsDU0JzA4LjEiRQ!5e0!3m2!1sen!2sph!4v1776172136972!5m2!1sen!2sph" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+        </div>
     </div>
 </div>

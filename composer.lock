@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "70f4494283c180d882e3988410f04534",
+    "content-hash": "071bf0ae64eb547267987210e04a3170",
     "packages": [
         {
             "name": "ajthinking/archetype",
@@ -3778,6 +3778,42 @@
             "time": "2025-12-17T14:35:46+00:00"
         },
         {
+            "name": "radsolutions/rad-seo",
+            "version": "dev-master",
+            "dist": {
+                "type": "path",
+                "url": "addons/rad-seo",
+                "reference": "16fcc80b5aed778f8b178d21a9d1f61066cd416c"
+            },
+            "require": {
+                "php": "^8.2",
+                "spatie/schema-org": "^3.23",
+                "statamic/cms": "^5.0"
+            },
+            "type": "statamic-addon",
+            "extra": {
+                "statamic": {
+                    "name": "RAD SEO",
+                    "description": "SEO helpers for RAD Solutions websites."
+                },
+                "laravel": {
+                    "providers": [
+                        "RadSolutions\\RadSeo\\ServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "RadSolutions\\RadSeo\\": "src"
+                }
+            },
+            "description": "RAD SEO addon for Statamic projects.",
+            "transport-options": {
+                "symlink": true,
+                "relative": true
+            }
+        },
+        {
             "name": "ralouphie/getallheaders",
             "version": "3.0.3",
             "source": {
@@ -4343,6 +4379,79 @@
                 }
             ],
             "time": "2025-02-14T12:29:50+00:00"
+        },
+        {
+            "name": "spatie/schema-org",
+            "version": "3.23.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/spatie/schema-org.git",
+                "reference": "a8dc1b6fcdd06afc1ab084c3ead9b7a4c3d7a35d"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/spatie/schema-org/zipball/a8dc1b6fcdd06afc1ab084c3ead9b7a4c3d7a35d",
+                "reference": "a8dc1b6fcdd06afc1ab084c3ead9b7a4c3d7a35d",
+                "shasum": ""
+            },
+            "require": {
+                "ext-json": "*",
+                "php": "^8.0"
+            },
+            "require-dev": {
+                "friendsofphp/php-cs-fixer": "^3.6",
+                "graham-campbell/analyzer": "^4.2",
+                "illuminate/collections": "^8.62.0",
+                "league/flysystem": "^2.3.0 || ^3.0",
+                "pestphp/pest": "^1.21",
+                "symfony/console": "^5.3.7 || 6.0",
+                "twig/twig": "^3.3.3"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Spatie\\SchemaOrg\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Sebastian De Deyne",
+                    "email": "sebastian@spatie.be",
+                    "homepage": "https://spatie.be",
+                    "role": "Developer"
+                },
+                {
+                    "name": "Tom Witkowski",
+                    "email": "dev.gummibeer@gmail.com",
+                    "homepage": "https://gummibeer.de",
+                    "role": "Developer"
+                }
+            ],
+            "description": "A fluent builder Schema.org types and ld+json generator",
+            "homepage": "https://github.com/spatie/schema-org",
+            "keywords": [
+                "schema-org",
+                "spatie"
+            ],
+            "support": {
+                "issues": "https://github.com/spatie/schema-org/issues",
+                "source": "https://github.com/spatie/schema-org/tree/3.23.1"
+            },
+            "funding": [
+                {
+                    "url": "https://spatie.be/open-source/support-us",
+                    "type": "custom"
+                },
+                {
+                    "url": "https://github.com/spatie",
+                    "type": "github"
+                }
+            ],
+            "time": "2025-01-31T14:54:12+00:00"
         },
         {
             "name": "spatie/shiki-php",
@@ -10738,7 +10847,9 @@
     ],
     "aliases": [],
     "minimum-stability": "dev",
-    "stability-flags": {},
+    "stability-flags": {
+        "radsolutions/rad-seo": 20
+    },
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": {

@@ -1,3 +1,25 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@mixin poppins($weight: 400, $fontsize: 15px, $fontstyle: normal) {
+    font-family: "Poppins", sans-serif;
+    font-weight: $weight;
+    font-size: $fontsize;
+    font-style: $fontstyle;
+}
+
+.btn-primary {
+    @include poppins(300, 1rem);
+    border-radius: 5px;
+    background-color: $tertiary;
+    color: #fff;
+    padding: 0.74rem 2.2rem;
+    text-decoration: none;
+    display: inline-block;
+    transition: all 0.3s ease;
+    .icon {
+        margin-right: 0.5rem;
+    }
+}
+
 .icon {
     fill: currentColor;
     width: 1em;
@@ -5,22 +27,66 @@
     vertical-align: -.125em;
 }
 
-.header, .footer {
-    padding: 1rem 0;
-    background-color: #808080 ;
-    a:not(.dropdown-item) {
-        color: white;
-        text-decoration: none;
-        transition: opacity 0.3s ease;
-        &:hover {
-            opacity: 0.8;
-        }
-    }
-
-    .navbar-brand {
+.header {
+    background-color: #000;
+    .navbar {
         padding: 0;
-        .icon {
-            font-size: 5rem;
+        height: 125px;
+        .navbar-brand {
+            max-width: 215px;
+        }
+        .navbar-collapse {
+            justify-content: flex-end;
+            align-items: center;
+            height: 100%;
+            .navbar-nav {
+                height: 100%;
+                li {
+                    height: 100%;
+                    a {
+                        @include poppins(400,21px);
+                        color: $font-color;
+                        transition: all .3s ease;
+                        height: 100%;
+                        display: flex;
+                        align-items: center;
+                        padding: 0 1.5rem;
+                        &:hover {
+                            color: #000;
+                            background-color: $secondary;
+                        }
+                    }
+                    &.active {
+                        a {
+                            color: #000;
+                            background-color: $secondary;
+                        }
+                    }
+                }
+                li.dropdown {
+                    .dropdown-toggle.show {
+                        color: #000;
+                        background-color: #C7C7C7;
+                    }
+                    .dropdown-menu {
+                        top: 99%;
+                        border-radius: 0;
+                        background-color: $secondary;
+                        border: 0;
+                        li {
+                            margin-left: 0;
+                            a {
+                                color: $primary;
+                                padding: 0.5rem 2rem;
+                                &:hover, &.active {
+                                    background-color: $primary;
+                                    color: #fff;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
         }
     }
 }
@@ -48,11 +114,46 @@
     height: auto
 }
 
-.content {
-    //adds spacing at top of the content (ignoring carousel)
-    & > :nth-child(1 of div.container) {
-        margin-top: 2rem;
+.carousel {
+    .swiper {
+        .swiper-wrapper {
+            .swiper-slide {
+                position: relative;
+                img {
+                    margin: 0;
+                    width: 100%;
+                    height: auto;
+                    object-fit: cover;
+                    object-position: center;
+                }
+                .wrap {
+                    position: absolute;
+                    top: 0;
+                    bottom: 0;
+                    left: 0;
+                    right: 0;
+                    background: linear-gradient(90deg,rgba($primary, 0.6) 0%, rgba(255, 255, 255, 0) 65%);
+                    .caption {
+                        max-width: 515px;
+                        h1 {
+                            @include poppins(500,3rem);
+                            color: $font-color;
+                        }
+                    }
+                }
+            }
+        }
     }
+}
+
+.content {
+    padding: 70px 0;
+    //adds spacing at top of the content (ignoring carousel)
+    // & > :nth-child(1 of div.container) {
+    //     margin-top: 2rem;
+    // }
+
+
     
     // spacing
     img, table, video, .gallery, .btn {
@@ -88,10 +189,200 @@
         }
     }
 }
+.home.content {
+    padding-top: 0;
+    .home-intro {
+        background-color: #111111;
+        height: 400px;
+        .intro-wrapper {
+            align-items: center;
+            .intro-text {
+                h1 {
+                    @include poppins(600,35px);
+                    color: #fff;
+                    margin-bottom: 1.5rem
+                }
+                p {
+                    @include poppins(400,23px);
+                    color: #fff;
+                    margin-bottom: 0
+                }
+            }
+            .intro-btn {
+                margin-bottom: 3rem;
+            }
+            .intro-image {
+                margin-bottom: -220px;
+            }
+        }
+    }
+    .home-services {
+        margin-top: 4rem;
+        .services-header {
+            width: 33%;
+            margin-bottom: 3rem;
+            .service-company {
+                margin-bottom: 0;
+                padding-left: 6rem;
+                padding-right: 0.5rem;
+                background-color: $tertiary;
+                color: #fff;
+                width: fit-content;
+                text-transform: uppercase;
+            }
+            h1 {
+                @include poppins(600,52px);
+                color: #000;
+                text-transform: uppercase;
+                letter-spacing: -1px;
+                margin-bottom: 0;
+            }
+            h3 {
+                @include poppins(400,30px);
+                color: #000;
+                text-align: end
+            }
+        }
+        .services-grids {
+            [class*="col-"] {
+                margin-bottom: 2rem;
+            }
+            .service {
+                box-shadow: 0 0 50px 10px rgba(0, 0, 0, 0.1);
+                background-color: #fff;
+                padding: 1rem;
+                height: 100%;
+                display: flex;
+                flex-direction: column;
+                .service-title {
+                    @include poppins(400,20px);
+                    color: #fff;
+                    background-color: $tertiary;
+                    border-radius: 5px;
+                    padding: 0.5rem 1rem;
+                    letter-spacing: -1px;
+                }
+                .service-intro {
+                    @include poppins(400,18px);
+                    color: #000;
+                    margin-top: 1rem;
+                }
+                .service-btn-icon {
+                    margin-top: auto;
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: flex-end;
+                    .btn-primary {
+                        margin-top: 4rem;
+                        margin-bottom: 0;
+                        .icon {
+                            margin-right: 0;
+                            margin-left: 10px;
+                            width: 21px;
+                            height: auto;
+                            vertical-align: -5px;
+                        }
+                    }
+                    img {
+                        margin-bottom: 0;
+                        margin-right: 0.5rem;
+                        width: 80px;
+                        height: 80px;
+                    }
+                }
+            }
+        }
+    }
+    .home-cta {
+        box-shadow: 0 0 50px 10px rgba(0, 0, 0, 0.1);
+        padding: 3rem 0;
+        background-color: #fff;
+        margin: 4rem 0;
+        [class*="col-"] {
+            border-right: 1px solid $tertiary;
+            .cta-icon {
+                height: 80px;
+                width: 77px;
+            }
+            .cta-content {
+                margin-left: 1rem;
+                .socials {
+                    display: flex;
+                }
+                .social-icons {
+                    background-color: #000;
+                    border-radius: 50%;
+                    height: 40px;
+                    width: 40px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    transition: all .3s ease;
+                    margin-right: 0.75rem;
+                    .icon {
+                        height: auto;
+                        width: 1.5rem;
+                    }
+                    &:hover {
+                        background-color: $tertiary;
+                    }
+                }
+            }
+            &:last-child {
+                border-right: none;
+            }
+            .get-quote, .call-us, .message-us {
+                max-width: 350px;
+                margin: 0 auto;
+                padding: 3rem 0;
+            }
+        }
+    }
+    .home-location {
+        display: flex;
+        .location-details {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            width: 45%;
+            margin-right: 5%;
+            padding: 2rem;
+            box-shadow: 0 0 50px 10px rgba(0, 0, 0, 0.1);
+            .company {
+                margin-bottom: 0;
+                padding-left: 6rem;
+                padding-right: 0.5rem;
+                background-color: $tertiary;
+                color: #fff;
+                width: fit-content;
+                text-transform: uppercase;
+            }
+            h1 {
+                @include poppins(600,52px);
+                color: #000;
+                text-transform: uppercase;
+                letter-spacing: -1px;
+            }
+            .location-address {
+                max-width: 350px;
+            }
+            .btn-primary {
+                width: fit-content;
+            }
+        }
+        .location-map {
+            width: 50%;
+            ifram {
+                width: 100%;
+            }
+        }
+    }
+}
 
 .footer {
     margin-top: auto;
     font-size: 0.8rem;
+    background-color: #000;
     .icon {
         margin-right: 0.5rem;
     }

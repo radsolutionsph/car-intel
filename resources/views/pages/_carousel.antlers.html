@@ -1,28 +1,33 @@
-<div class="swiper swiper-initialized swiper-horizontal swiper-backface-hidden" 
-    data-carousel="true" 
-    data-autoplay="true" 
-    data-pause="false" 
-    data-loop="true" 
-    data-pagination="true" 
-    data-delay="6000" 
-    data-navigation="false" 
-    data-scroller="true" 
-    data-effect="fade" 
-    data-speed="300" 
-    data-per-view="1" 
-    data-per-group="1"
->
-    {{ collection:carousel }}
-        <div class="swiper-slide">
-            <img src="{{ glide:image fit="crop_focal" }}" alt="{{ title }}" class="img-fluid">
-            {{ if caption }}
-                <div class="caption">
-                    <div>
-                        <h1>{{ caption }}</h1>
+<div class="carousel">
+    <div class="swiper swiper-initialized swiper-horizontal swiper-backface-hidden" 
+        data-scroller="true" 
+        data-delay="6000" 
+        data-pagination="false" 
+        data-navigation="false" 
+        data-effect="slide" 
+        data-speed="800" 
+        data-per-view="1" 
+        data-per-group="1"
+    >
+        {{ collection:carousel }}
+            <div class="swiper-slide">
+                {{ responsive:image
+                    alt="{ alt }"
+                    class="img-fluid"
+                }}
+                {{ if caption }}
+                <div class="wrap">
+                    <div class="container d-flex align-items-center h-100">
+                        <div class="caption">
+                            <div>
+                                {{ caption }}
+                            </div>
+                        </div>
                     </div>
                 </div>
-            {{ /if }}
-        </div>
-    {{ /collection:carousel }}
-    <div class="swiper-pagination"></div>
+                {{ /if }}
+            </div>
+        {{ /collection:carousel }}
+        <div class="swiper-pagination"></div>
+    </div>
 </div>

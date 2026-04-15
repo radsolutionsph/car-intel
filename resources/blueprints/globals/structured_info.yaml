@@ -1,0 +1,198 @@
+title: 'Structured Info'
+tabs:
+  main:
+    display: Main
+    sections:
+      -
+        fields:
+          -
+            handle: business_name
+            field:
+              type: text
+              display: 'Business Name'
+              instructions: 'Main business or organization name.'
+              validate:
+                - required
+          -
+            handle: website_description
+            field:
+              type: textarea
+              display: 'Website Description'
+              validate:
+                - required
+          -
+            handle: opengraph_image
+            field:
+              type: assets
+              display: 'Open Graph Image'
+              container: public-images
+              max_files: 1
+              instructions: 'Optional override image for social sharing.'
+          -
+            handle: social
+            field:
+              type: grid
+              display: Social
+              add_row: 'Add Social URL'
+              instructions: 'Public profile URLs (Facebook, Instagram, etc).'
+              fields:
+                -
+                  handle: same_as
+                  field:
+                    type: text
+                    display: URL
+                    validate:
+                      - required
+                      - url
+  locations:
+    display: Locations
+    sections:
+      -
+        fields:
+          -
+            handle: locations
+            field:
+              type: replicator
+              display: Locations
+              instructions: 'Add one or more business locations.'
+              add_row: 'Add Location'
+              collapse: false
+              validate:
+                - required
+              sets:
+                location_set:
+                  display: Location
+                  sets:
+                    location:
+                      display: Location
+                      fields:
+                        -
+                          handle: enabled
+                          field:
+                            type: toggle
+                            display: Enabled
+                            default: true
+                            width: 25
+                        -
+                          handle: name
+                          field:
+                            type: text
+                            display: 'Location Name'
+                            instructions: 'Used when multiple locations exist.'
+                            width: 75
+                        -
+                          handle: phone
+                          field:
+                            type: text
+                            display: Phone
+                            instructions: 'Use PH format, e.g. +63 917 123 4567 or (02) 8123 4567.'
+                            width: 50
+                        -
+                          handle: email
+                          field:
+                            type: text
+                            display: Email
+                            validate:
+                              - email
+                            width: 50
+                        -
+                          handle: street
+                          field:
+                            type: text
+                            display: 'Street Address'
+                            instructions: 'House/Unit/Building + Street, e.g. 123 Rizal Ave.'
+                        -
+                          handle: barangay
+                          field:
+                            type: text
+                            display: Barangay
+                            instructions: 'Barangay name, e.g. Barangay 76.'
+                        -
+                          handle: suburb
+                          field:
+                            type: text
+                            display: 'City / Municipality'
+                            instructions: 'City or municipality, e.g. Quezon City.'
+                            width: 50
+                        -
+                          handle: state
+                          field:
+                            type: text
+                            display: Province
+                            instructions: 'Province, e.g. Metro Manila, Cavite, Laguna.'
+                            width: 25
+                        -
+                          handle: postcode
+                          field:
+                            type: text
+                            display: 'ZIP Code'
+                            width: 25
+                        -
+                          handle: country
+                          field:
+                            type: text
+                            display: Country
+                            default: PH
+                            instructions: 'Use ISO country code PH.'
+                            width: 33
+                        -
+                          handle: latitude
+                          field:
+                            type: text
+                            display: Latitude
+                            width: 33
+                        -
+                          handle: longitude
+                          field:
+                            type: text
+                            display: Longitude
+                            width: 33
+                        -
+                          handle: opening_hours
+                          field:
+                            type: replicator
+                            display: 'Opening Hours'
+                            instructions: 'Add one row per day group and opening window.'
+                            collapse: true
+                            sets:
+                              opening_hours_set:
+                                display: Hours
+                                sets:
+                                  hours:
+                                    display: Hours
+                                    fields:
+                                      -
+                                        handle: enabled
+                                        field:
+                                          type: toggle
+                                          display: Enabled
+                                          default: true
+                                          width: 20
+                                      -
+                                        handle: days
+                                        field:
+                                          type: checkboxes
+                                          display: Days
+                                          inline: true
+                                          width: 80
+                                          options:
+                                            Monday: Monday
+                                            Tuesday: Tuesday
+                                            Wednesday: Wednesday
+                                            Thursday: Thursday
+                                            Friday: Friday
+                                            Saturday: Saturday
+                                            Sunday: Sunday
+                                            PublicHolidays: 'Public Holidays'
+                                      -
+                                        handle: open
+                                        field:
+                                          type: time
+                                          display: Open
+                                          width: 50
+                                      -
+                                        handle: close
+                                        field:
+                                          type: time
+                                          display: Close
+                                          width: 50

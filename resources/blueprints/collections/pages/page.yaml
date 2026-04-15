@@ -13,6 +13,13 @@ tabs:
               validate:
                 - required
           -
+            handle: meta_description
+            field:
+              type: textarea
+              display: 'Meta Description'
+              instructions: 'Used for SEO description meta tag.'
+              character_limit: 160
+          -
             import: composition_pages
   options:
     display: Options

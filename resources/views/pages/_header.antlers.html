@@ -1,31 +1,31 @@
-{{ nav_items = {nav from="/" include_home="true" scope="menu" show_in_nav:equals="true" max_depth="2" select="navigation_title|title|url" } }}
+{{ nav_items = {nav from="/" include_home="false" scope="menu" show_in_nav:equals="true" max_depth="2" select="navigation_title|title|url" } }}
 <div class="header">    
-    <div>
-        <nav class="navbar navbar-expand-lg">
-            <div class="container">
-                <a class="navbar-brand" href="{{ $homepage }}">
-                    {{ svg src="rad-logo-full" class="icon" }}
-                </a>
+    <nav class="navbar navbar-expand-lg">
+        <div class="container h-100">
+            <a class="navbar-brand" href="{{ $homepage }}">
+                {{ asset src="public-images::logo.png" }}
+                    <img class="img-fluid" src="{{ url }}" alt="Car Intel">
+                {{ /asset }}
+            </a>
 
-                <button class="navbar-toggler order-last"  type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="toggler-icon">
-                        <span></span>
-                        <span></span>
-                        <span></span>
-                    </span>
-                </button>
+            <button class="navbar-toggler order-last"  type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="toggler-icon">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </span>
+            </button>
 
-                <div class="collapse navbar-collapse" id="navbarNavDropdown">
-                    <ul class="navbar-nav navbar-nav-scroll">
-                        {{ nav_items }}
-                            {{ partial:pages/_navigations }}
-                        {{ /nav_items }}
-                        {{ slot:extra_items }}
-                    </ul>
-                </div>
-
-                {{ slot:after_menu }}
+            <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                <ul class="navbar-nav navbar-nav-scroll">
+                    {{ nav_items }}
+                        {{ partial:pages/_navigations }}
+                    {{ /nav_items }}
+                    {{ slot:extra_items }}
+                </ul>
             </div>
-        </nav>
-    </div>
+
+            {{ slot:after_menu }}
+        </div>
+    </nav>
 </div>

@@ -1,0 +1,7 @@
+title: 'Public Images'
+disk: public-images
+allow_uploads: false
+allow_downloading: false
+allow_renaming: false
+allow_moving: false
+create_folders: false

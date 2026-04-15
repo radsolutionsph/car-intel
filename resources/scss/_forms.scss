@@ -3,44 +3,44 @@ $group-margin: .75rem !default;
 $instruction-margin: .25rem !default;
 $loader-color: $primary !default;
 
-.potent-forms {
-    position: relative;
+// .potent-forms {
+//     position: relative;
 
-    fieldset:disabled {
-        transition: opacity 1s;
-        opacity: 0.3;
+//     fieldset:disabled {
+//         transition: opacity 1s;
+//         opacity: 0.3;
 
-        .form-control {
-            background-color: $body-bg;
-        }
-    }
+//         .form-control {
+//             background-color: $body-bg;
+//         }
+//     }
 
-    .form-text {
-        // helps with spacing on instructions
-        p {
-            margin-bottom: $instruction-margin;
-        }
-    }
+//     .form-text {
+//         // helps with spacing on instructions
+//         p {
+//             margin-bottom: $instruction-margin;
+//         }
+//     }
 
-    .form-group {
-        margin-bottom: $group-margin;
-    }
+//     .form-group {
+//         margin-bottom: $group-margin;
+//     }
 
-    // https://css-loaders.com/spinner/
-    // TODO: add more spinners
-    .loader {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        width: 50px;
-        aspect-ratio: 1;
-        border-radius: 50%;
-        border: 8px solid $loader-color;
-        animation:
-            l20-1 0.8s infinite linear alternate,
-            l20-2 1.6s infinite linear;
-    }
-}
+//     // https://css-loaders.com/spinner/
+//     // TODO: add more spinners
+//     .loader {
+//         position: absolute;
+//         top: 50%;
+//         left: 50%;
+//         width: 50px;
+//         aspect-ratio: 1;
+//         border-radius: 50%;
+//         border: 8px solid $loader-color;
+//         animation:
+//             l20-1 0.8s infinite linear alternate,
+//             l20-2 1.6s infinite linear;
+//     }
+// }
 
 @keyframes l20-1 {
     0% {

@@ -1,12 +1,12 @@
 {{ if children }}
-    <li class="nav-item dropdown">
+    <li class="nav-item dropdown{{ if is_current || is_parent }} active{{ /if }}">
         <a href="#" class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
             {{ navigation_title or title }}
         </a>
         <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
             {{ children }}
                 <li>
-                    <a class="dropdown-item" href="{{ url }}">
+                    <a class="dropdown-item{{ if is_current || is_parent }} active{{ /if }}" href="{{ url }}">
                         {{ navigation_title or title }}
                     </a>
                 </li>
@@ -14,7 +14,7 @@
         </ul>
     </li>
 {{ else }}
-    <li class="nav-item">
+    <li class="nav-item{{ if is_current || is_parent }} active{{ /if }}">
         <a href="{{ url }}" class="nav-link">
             {{ navigation_title or title }}
         </a>
