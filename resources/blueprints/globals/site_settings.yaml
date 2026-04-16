@@ -1,0 +1,34 @@
+# This file is managed by the "potent-dev:build:blueprints" command. It should not be edited directly or via the control panel
+tabs:
+  main:
+    display: Main
+    sections:
+      -
+        fields:
+          -
+            handle: site_title
+            field:
+              display: 'Site Title'
+              type: text
+              instructions: 'Used in the title tag.'
+              validate:
+                - required
+          -
+            handle: business_name
+            field:
+              type: text
+              display: 'Business Name'
+              instructions: 'Used for various backend settings including the mailable templates.'
+              validate:
+                - required
+          -
+            handle: footer
+            field:
+              buttons:
+                - bold
+                - italic
+                - removeformat
+                - anchor
+              remove_empty_nodes: false
+              type: bard
+              display: Footer

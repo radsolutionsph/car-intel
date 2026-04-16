@@ -1,0 +1,16 @@
+<div class="titlestrip{{ if titlestrip_image || titlestrip.titlestrip_image }} image-titlestrip{{ /if }}">
+    {{ if titlestrip_image }}
+        {{ responsive:titlestrip_image alt="{ alt }" class="img-fluid" }}
+    {{ else }}
+        {{ responsive:titlestrip.titlestrip_image alt="{ alt }" class="img-fluid" }}
+    {{ /if }}
+    <div class="wrap d-flex align-items-center">
+        <div class="container">
+            {{ if titlestrip_text }}
+                {{ titlestrip_text }}
+            {{ else }}
+                {{ titlestrip.titlestrip_text }}
+            {{ /if }}
+        </div>
+    </div>
+</div>

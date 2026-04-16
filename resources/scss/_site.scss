@@ -34,6 +34,7 @@
         height: 125px;
         .navbar-brand {
             max-width: 215px;
+            padding: 0;
         }
         .navbar-collapse {
             justify-content: flex-end;
@@ -106,6 +107,42 @@
 .menu-open {
     .navbar-toggler {
         order: unset !important;
+    }
+}
+
+.titlestrip {
+    background: linear-gradient(120deg, $primary, $secondary 60%, $tertiary);
+    margin-bottom: 4rem;
+    position: relative;
+    .wrap {
+        min-height: 170px;
+        position: relative;
+        padding: 2rem 0;
+        left: 0%;
+        top: 0%;
+        text-align: left;
+        h1, h2, h3, h4, p {
+            @include poppins(700, 2.25rem);
+            color: #fff;
+            line-height: 1.3;
+            margin-bottom: 0;
+        }
+    }
+    &.image-titlestrip {
+        img {
+            min-height: 250px;
+            max-height: 276px;
+            width: 100%;
+            max-width: 100%;
+            object-fit: cover;
+        }
+        .wrap {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+        }
     }
 }
 
@@ -381,9 +418,91 @@
 
 .footer {
     margin-top: auto;
+    padding: 6rem 0 3rem 0;
     font-size: 0.8rem;
     background-color: #000;
-    .icon {
-        margin-right: 0.5rem;
+    h1, h2, h3, h4, p, a {
+        color: #fff;
+    }
+    .logo-footer-text {
+        color: #fff;
+        img {
+            max-width: 215px;
+            display: block;
+            margin-bottom: 1rem;
+        }
+        p {
+            @include poppins(400,14px);
+            color: #fff;
+        }
+    }
+    .footer-nav {
+        display: flex;
+        justify-content: flex-end;
+        h3 {
+            @include poppins(700,25px);
+            color: #fff;
+        }
+        li a {
+            @include poppins(400,18px);
+            color: #fff;
+            margin-bottom: 0.3rem;
+            transition: all .3s ease;
+            &:hover {
+                color: $secondary;
+            }
+        }
+        .service-nav, .about-nav {
+            margin-right: 5rem;
+        }
+        .about-nav {
+            ul {
+                li a {
+                    @include poppins(700,25px);
+                    color: #fff;
+                    margin-bottom: 0.3rem;
+                    transition: all .3s ease;
+                    &:hover {
+                        color: $secondary;
+                    }
+                }
+            }
+            .socials {
+                display: flex;
+            }
+            .social-icons {
+                background-color: $tertiary;
+                border-radius: 50%;
+                height: 40px;
+                width: 40px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                transition: all .3s ease;
+                margin-right: 0.75rem;
+                .icon {
+                    height: auto;
+                    width: 1.5rem;
+                }
+                &:hover {
+                    background-color: $secondary;
+                }
+            }
+        }
+        .call-us-info {
+            .call-icon {
+                height: 80px;
+                width: 77px;
+            }
+            p, a {
+                @include poppins(400,18px);
+                color: #fff;
+                margin-bottom: 0.3rem;
+                transition: all .3s ease;
+                &:hover {
+                    color: $secondary;
+                }
+            }
+        }
     }
 }

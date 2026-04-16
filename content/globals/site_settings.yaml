@@ -1,0 +1,11 @@
+title: 'Site Settings'
+data:
+  site_title: 'Lorem Ipsum'
+  business_name: 'Lorem Ipsum Industries'
+  footer:
+    -
+      type: paragraph
+      content:
+        -
+          type: text
+          text: '© 2025 Lorem Ipsum Industries'

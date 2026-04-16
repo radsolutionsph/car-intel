@@ -1,0 +1,25 @@
+# This file is managed by the "potent-dev:build:blueprints" command. It should not be edited directly or via the control panel
+tabs:
+  main:
+    display: Main
+    sections:
+      -
+        fields:
+          -
+            handle: titlestrip_text
+            field:
+              type: markdown
+              display: 'Titlestrip Text'
+              antlers: true
+              instructions: 'This can include Antlers tags such as ``{{ title }}``.'
+              instructions_position: below
+              always_save: true
+          -
+            handle: titlestrip_image
+            field:
+              type: assets
+              display: 'Titlestrip Image'
+              max_files: 1
+              container: assets
+              folder: titlestrips
+              always_save: true
