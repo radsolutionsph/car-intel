@@ -1,4 +1,4 @@
-<footer class="footer mt-5">
+<footer class="footer">
     <div class="container">
         <div class="row">
             <div class="col-md-4">
@@ -35,15 +35,27 @@
                             {{ /nav:about_nav }}
                         </ul>
                         <div class="socials">
-                            <a href="#" class="social-icons">{{ svg src="envelope" class="icon" }}</a>
-                            <a href="#" class="social-icons">{{ svg src="facebook-f" class="icon" }}</a>
+                            {{ if contact_info.email }}
+                                <a href="mailto:{{ contact_info.email }}" class="social-icons">{{ svg src="envelope" class="icon" }}</a>
+                            {{ /if }}
+                            {{ if contact_info.facebook }}
+                                <a href="{{ contact_info.facebook }}" class="social-icons">{{ svg src="facebook-f" class="icon" }}</a>
+                            {{ /if }}
                         </div>
                     </div>
                     <div class="call-us-info">
                         <div class="contact-info">
                             <h3>Call Us!</h3>
-                            <p class="mb-0">(+639) 43 237 0819</p>
-                            <p class="mb-0">(02) 222 2222</p>
+                            {{ if contact_info.phone }}
+                                <p class="mb-0">
+                                    <a href="tel:+{{ contact_info.phone }}">{{ contact_info.phone_display }}</a>
+                                </p>
+                            {{ /if }}
+                            {{ if contact_info.mobile }}
+                                <p class="mb-0">
+                                    <a href="tel:+{{ contact_info.mobile }}">{{ contact_info.mobile_display }}</a>
+                                </p>
+                            {{ /if }}
                         </div>
                     </div>
                 </div>

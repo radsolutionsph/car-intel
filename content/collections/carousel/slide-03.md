@@ -1,5 +1,6 @@
 ---
 id: ab5d9996-0043-40ac-b07b-a410f04dca8b
+published: false
 blueprint: carousel
 title: 'Slide 03'
 image: carousel/slide-3.png

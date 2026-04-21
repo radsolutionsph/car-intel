@@ -5,91 +5,45 @@ tabs:
       -
         fields:
           -
-            handle: items
+            handle: phone_display
             field:
-              display: 'Contact Items'
-              type: replicator
-              sets:
-                main:
-                  display: Main
-                  sets:
-                    item:
-                      display: Item
-                      fields:
-                        -
-                          handle: key
-                          field:
-                            display: Key
-                            type: text
-                            validate:
-                              - required
-                              - alpha_dash
-                            width: 33
-                        -
-                          handle: contact_type
-                          field:
-                            options:
-                              phone: Phone
-                              email: Email
-                              url: Url
-                              information: Information
-                            display: 'Contact Type'
-                            type: select
-                            width: 33
-                            validate:
-                              - required
-                        -
-                          handle: phone
-                          field:
-                            placeholder: '05 5555 5555'
-                            display: Phone
-                            type: text
-                            if:
-                              contact_type: 'equals phone'
-                            validate:
-                              - sometimes
-                              - required
-                        -
-                          handle: email
-                          field:
-                            display: Email
-                            type: text
-                            if:
-                              contact_type: 'equals email'
-                            validate:
-                              - sometimes
-                              - required
-                              - email
-                        -
-                          handle: url
-                          field:
-                            display: Url
-                            type: text
-                            if:
-                              contact_type: 'equals url'
-                            validate:
-                              - sometimes
-                              - required
-                              - url
-                        -
-                          handle: information
-                          field:
-                            display: Information
-                            type: textarea
-                            validate:
-                              - sometimes
-                              - required
-                            if:
-                              contact_type: 'equals information'
-                        -
-                          handle: link
-                          field:
-                            display: Link
-                            type: text
-                            instructions: 'A link is required for auto-tracking.'
-                            validate:
-                              - sometimes
-                              - url
-                              - nullable
-                            if:
-                              contact_type: 'equals information'
+              type: text
+              display: 'Phone Display'
+          -
+            handle: phone
+            field:
+              type: text
+              display: Phone
+          -
+            handle: mobile_display
+            field:
+              type: text
+              display: 'Mobile Display'
+          -
+            handle: mobile
+            field:
+              type: text
+              display: Mobile
+          -
+            handle: email
+            field:
+              input_type: email
+              type: text
+              display: Email
+              validate:
+                - email
+          -
+            handle: address
+            field:
+              type: textarea
+              display: Address
+          -
+            handle: hours
+            field:
+              type: textarea
+              display: Hours
+          -
+            handle: facebook
+            field:
+              type: text
+              display: Facebook

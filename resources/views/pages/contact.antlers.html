@@ -1,0 +1,93 @@
+{{ partial:pages/titlestrip }}
+<div class="content flex-grow-1 contact">
+    {{ partial:_content }}
+    {{ slot }}
+    <div class="container">
+        <div class="contact-wrapper">
+            <div class="row">
+                <div class="col-lg-4 contact-info">
+                    <h2>Contact Details</h2>
+                    {{ if contact_info.phone }}
+                        <h3>Phone</h3>
+                        <p><a href="tel:+{{ contact_info.phone }}">{{ contact_info.phone_display }}</a></p>
+                    {{ /if }}
+                    {{ if contact_info.mobile }}
+                        <h3>Mobile</h3>
+                        <p><a href="tel:+{{ contact_info.mobile }}">{{ contact_info.mobile_display }}</a></p>
+                    {{ /if }}
+                    {{ if contact_info.email }}
+                        <h3>Email</h3>
+                        <p><a href="mailto:{{ contact_info.email }}">{{ contact_info.email }}</a></p>
+                    {{ /if }}
+                    {{ if contact_info.address }}
+                        <h3>Address</h3>
+                        <p>{{ contact_info.address | nl2br }}</p>
+                    {{ /if }}
+                    {{ if contact_info.hours }}
+                        <h3>Operating Hours</h3>
+                        <p>{{ contact_info.hours }}</p>
+                    {{ /if }}
+                    {{ if contact_info.facebook }}
+                        <h3>Facebook</h3>
+                        <p><a href="{{ contact_info.facebook }}" target="_blank">/carintel</a></p>
+                    {{ /if }}
+                    
+                </div>
+                <div class="col-lg-8 contact-form">
+                    <h2>Website Inquiry</h2>
+                    {{ form:create in="inquiry" }}
+                        {{ if success }}
+                            <div class="bg-green-100 text-green-800 p-4 mb-4">
+                                Success! We've received your inquiry.
+                            </div>
+                        {{ /if }}
+
+                        {{ if errors }}
+                            <div class="bg-red-100 text-red-800 p-4 mb-4">
+                                {{ errors }}
+                                    <p>{{ value }}</p>
+                                {{ /errors }}
+                            </div>
+                        {{ /if }}
+                        <div>
+                            <fieldset :disabled="submitting || success">
+                                <div class="row">
+                                    <div class="form-group col-sm-12 d-none">
+                                        <label for="cell-phone" class="form-label"> Cell Phone </label>
+                                        <input class="" type="text" id="cell_phone" name="cell_phone" value="{{ old:cell_phone }}">
+                                    </div>
+                                    <div class="form-group col-sm-12">
+                                        <label for="name" class="form-label"> Name* </label>
+                                        <input class="form-control" type="text" id="name" name="name" value="{{ old:name }}">
+                                    </div>
+                                    <div class="form-group col-sm-12">
+                                        <label for="email" class="form-label"> Email* </label>
+                                        <input class="form-control" type="text" id="email" name="email" value="{{ old:email }}">
+                                    </div>
+                                    <div class="form-group col-sm-12">
+                                        <label for="phone" class="form-label"> Phone* </label>
+                                        <input class="form-control" type="text" id="phone" name="phone" value="{{ old:phone }}">
+                                    </div>
+                                    <div class="form-group col-sm-12">
+                                        <label for="inquiry" class="form-label"> Inquiry* </label>
+                                        <textarea class="form-control" name="inquiry" id="inquiry" rows="5">{{ old:inquiry }}</textarea>
+                                    </div>
+                                    <div class="form-group col-sm-12">
+                                        <input
+                                            class="btn btn-primary"
+                                            type="submit"
+                                            value="Send Inquiry"
+                                        >
+                                    </div>
+                                </div>
+                            </fieldset>
+                        </div>
+                    {{ /form:create }}
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="contact-map">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3864.3041216002157!2d120.902257!3d14.409623999999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMTTCsDI0JzM0LjciTiAxMjDCsDU0JzA4LjEiRQ!5e0!3m2!1sen!2sph!4v1776172136972!5m2!1sen!2sph" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+</div>

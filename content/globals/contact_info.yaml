@@ -1,27 +1,12 @@
 title: 'Contact Info'
 data:
-  items:
-    -
-      id: m88af0cw
-      key: phone
-      contact_type: phone
-      phone: '03 5555 5555'
-      type: item
-      enabled: true
-    -
-      id: m88aiqp1
-      key: email
-      contact_type: email
-      email: lorem@ipsum.com
-      type: item
-      enabled: true
-    -
-      id: m88aj551
-      key: address
-      contact_type: information
-      information: |-
-        5 Lorem Lane,
-        Ipsum City, 5555
-      link: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d6296.37078862515!2d144.6610517!3d-37.902729099999995!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6ad685a4527c5e23%3A0x60970fba1df54136!2sSnap%20Print%20Solutions%20Werribee!5e0!3m2!1sen!2sau!4v1743110889973!5m2!1sen!2sau'
-      type: item
-      enabled: true
+  phone_display: '(02) 222 3333'
+  phone: '63322223333'
+  mobile_display: '09176347636'
+  mobile: '639176347636'
+  email: info@carintel.com.ph
+  address: |-
+    Lot 1 Advincula Rd. Brgy. San Sebastian 
+    Kawit, Cavite, Philippines
+  hours: '7:00am to 8:00pm'
+  facebook: 'https://www.facebook.com/profile.php?id=61574370730499'

@@ -44,7 +44,7 @@
                                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse.
                             </div>
                             <div class="service-btn-icon">
-                                <a href="{{ link:76684dea-97c0-440e-b069-819ceefa8e0a }}" class="btn btn-primary">Learn More {{ svg src="right-arrow" class="icon" }}</a>
+                                <a href="{{ link:f2cf2bda-bc71-4e0f-b442-c9b43cce79b9 }}" class="btn btn-primary">Learn More {{ svg src="right-arrow" class="icon" }}</a>
                                 {{ asset src="public-images::service-icon.png" }}
                                     <img class="img-fluid" src="{{ url }}" alt="Engine Services">
                                 {{ /asset }}
@@ -60,9 +60,9 @@
                                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse.
                             </div>
                             <div class="service-btn-icon">
-                                <a href="{{ link:76684dea-97c0-440e-b069-819ceefa8e0a }}" class="btn btn-primary">Learn More {{ svg src="right-arrow" class="icon" }}</a>
+                                <a href="{{ link:4f7c0d2e-ccb3-47c4-801b-5015e328b5f8 }}" class="btn btn-primary">Learn More {{ svg src="right-arrow" class="icon" }}</a>
                                 {{ asset src="public-images::service-icon.png" }}
-                                    <img class="img-fluid" src="{{ url }}" alt="Engine Services">
+                                    <img class="img-fluid" src="{{ url }}" alt="Transmission Services">
                                 {{ /asset }}
                             </div>
                         </div>
@@ -76,9 +76,9 @@
                                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse.
                             </div>
                             <div class="service-btn-icon">
-                                <a href="{{ link:76684dea-97c0-440e-b069-819ceefa8e0a }}" class="btn btn-primary">Learn More {{ svg src="right-arrow" class="icon" }}</a>
+                                <a href="{{ link:c13387d7-6bca-4b31-a880-042b920d9c54 }}" class="btn btn-primary">Learn More {{ svg src="right-arrow" class="icon" }}</a>
                                 {{ asset src="public-images::service-icon.png" }}
-                                    <img class="img-fluid" src="{{ url }}" alt="Engine Services">
+                                    <img class="img-fluid" src="{{ url }}" alt="Brake Repair Services">
                                 {{ /asset }}
                             </div>
                         </div>
@@ -92,9 +92,9 @@
                                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse.
                             </div>
                             <div class="service-btn-icon">
-                                <a href="{{ link:76684dea-97c0-440e-b069-819ceefa8e0a }}" class="btn btn-primary">Learn More {{ svg src="right-arrow" class="icon" }}</a>
+                                <a href="{{ link:b042c7ad-d163-4ef0-b4d8-cb47bad28e56 }}" class="btn btn-primary">Learn More {{ svg src="right-arrow" class="icon" }}</a>
                                 {{ asset src="public-images::service-icon.png" }}
-                                    <img class="img-fluid" src="{{ url }}" alt="Engine Services">
+                                    <img class="img-fluid" src="{{ url }}" alt="Aircon Services">
                                 {{ /asset }}
                             </div>
                         </div>
@@ -108,9 +108,9 @@
                                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse.
                             </div>
                             <div class="service-btn-icon">
-                                <a href="{{ link:76684dea-97c0-440e-b069-819ceefa8e0a }}" class="btn btn-primary">Learn More {{ svg src="right-arrow" class="icon" }}</a>
+                                <a href="{{ link:311e14fb-f8b8-4134-9922-08106604f0f9 }}" class="btn btn-primary">Learn More {{ svg src="right-arrow" class="icon" }}</a>
                                 {{ asset src="public-images::service-icon.png" }}
-                                    <img class="img-fluid" src="{{ url }}" alt="Engine Services">
+                                    <img class="img-fluid" src="{{ url }}" alt="Tires and Wheels Services">
                                 {{ /asset }}
                             </div>
                         </div>
@@ -124,7 +124,7 @@
                                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse.
                             </div>
                             <div class="service-btn-icon">
-                                <a href="{{ link:76684dea-97c0-440e-b069-819ceefa8e0a }}" class="btn btn-primary">Learn More {{ svg src="right-arrow" class="icon" }}</a>
+                                <a href="{{ link:0ca56f10-23ad-43b3-a5e4-b2f28c36ec42 }}" class="btn btn-primary">Learn More {{ svg src="right-arrow" class="icon" }}</a>
                                 {{ asset src="public-images::service-icon.png" }}
                                     <img class="img-fluid" src="{{ url }}" alt="Engine Services">
                                 {{ /asset }}
@@ -155,8 +155,16 @@
                         {{ /asset }}
                         <div class="cta-content">
                             <h3>Call Us!</h3>
-                            <p class="mb-0">Mobile Phone: (+639) 43 237 0819</p>
-                            <p class="mb-0">Landline: (02) 222 2222</p>
+                            {{ if contact_info.phone }}
+                                <p class="mb-0">
+                                    <a href="tel:+{{ contact_info.phone }}">{{ contact_info.phone_display }}</a>
+                                </p>
+                            {{ /if }}
+                            {{ if contact_info.mobile }}
+                                <p class="mb-0">
+                                    <a href="tel:+{{ contact_info.mobile }}">{{ contact_info.mobile_display }}</a>
+                                </p>
+                            {{ /if }}
                         </div>
                     </div>
                 </div>
@@ -168,8 +176,12 @@
                         <div class="cta-content">
                             <h3>Send us a message!</h3>
                             <div class="socials">
-                                <a href="#" class="social-icons">{{ svg src="envelope" class="icon" }}</a>
-                                <a href="#" class="social-icons">{{ svg src="facebook-f" class="icon" }}</a>
+                                {{ if contact_info.email }}
+                                    <a href="mailto:{{ contact_info.email }}" class="social-icons">{{ svg src="envelope" class="icon" }}</a>
+                                {{ /if }}
+                                {{ if contact_info.facebook }}
+                                    <a href="{{ contact_info.facebook }}" class="social-icons">{{ svg src="facebook-f" class="icon" }}</a>
+                                {{ /if }}
                             </div>
                         </div>
                     </div>
@@ -183,10 +195,10 @@
                 <div class="wrapper">
                     <p class="company">Car Intel</p>
                     <h1>Where to Find Us</h1>
-                    <p class="location-address">Lorem ipsum dolor sit amet consectetur adipisicing elit at <b>Lot 1 Advincula Rd. Brgy. San Sebastian, Kawit, Cavite, Philippines</b></p>
-                    <p>Operating Hours: 7:00AM to 8:00PM</p>
+                    <p class="location-address">Lorem ipsum dolor sit amet consectetur adipisicing elit at <a href="#">{{ contact_info.address }}</a></p>
+                    <p>Operating Hours: {{ contact_info.hours }}</p>
                 </div>
-                <a href="#" class="btn btn-primary">Contact Us {{ svg src="right-arrow" class="icon" }}</a>
+                <a href="{{ link:76684dea-97c0-440e-b069-819ceefa8e0a }}" class="btn btn-primary">Contact Us {{ svg src="right-arrow" class="icon" }}</a>
             </div>
             <div class="location-map">
                 <iframe src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3864.3041216002157!2d120.902257!3d14.409623999999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMTTCsDI0JzM0LjciTiAxMjDCsDU0JzA4LjEiRQ!5e0!3m2!1sen!2sph!4v1776172136972!5m2!1sen!2sph" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>

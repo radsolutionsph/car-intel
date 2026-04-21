@@ -1,4 +1,4 @@
 title: Titlestrip
 data:
   titlestrip_text: '{{ title }}'
-  titlestrip_image: titlestrips/slide-2.png
+  titlestrip_image: titlestrips/car-intel-titlestrip.png
