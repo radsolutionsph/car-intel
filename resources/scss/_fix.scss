@@ -1,0 +1,10 @@
+// Fixes scroll to top issue
+// https://github.com/biati-digital/glightbox/issues/22
+html.glightbox-open {
+    overflow: initial;
+}
+
+// this gets overridden
+.glightbox-button-hidden {
+    display: none !important;
+}

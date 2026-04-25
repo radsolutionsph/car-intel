@@ -1,18 +1,24 @@
 {{# NOTE: click-enlarge and link wrap come in from LinkWrap & ClickEnlargeWrap #}}
-{{ image }}
-    {{ $class = "" }}
-    {{ if image_options.alignment }}
-        {{ $alignmentClass = image_options.alignment }}
-        {{ $class = $alignmentClass }}
-    {{ /if }}
-    <div class="{{ $class}}">
-        {{ responsive:image
-            alt="{ alt }"
-            class="img-fluid"
-            :glide:width="image_options.max_width"
-        }}
-        {{ if image_options.caption }}
-            <div class="caption">{{ potent_image:alt :src="image" }}</div>
+<a 
+    href="{{ glide:image square="{site_settings.popup_maximum}" fit="max" }}"
+    data-lightbox="{{ id }}"
+    class="lightbox-embed"
+>
+    {{ image }}
+        {{ $class = "" }}
+        {{ if image_options.alignment }}
+            {{ $alignmentClass = image_options.alignment }}
+            {{ $class = $alignmentClass }}
         {{ /if }}
-    </div>
-{{ /image }}
+        <div class="{{ $class}}">
+            {{ responsive:image
+                alt="{ alt }"
+                class="img-fluid"
+                :glide:width="image_options.max_width"
+            }}
+            {{ if image_options.caption }}
+                <div class="caption">{{ potent_image:alt :src="image" }}</div>
+            {{ /if }}
+        </div>
+    {{ /image }}
+</a>

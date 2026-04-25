@@ -48,12 +48,12 @@
                             <h3>Call Us!</h3>
                             {{ if contact_info.phone }}
                                 <p class="mb-0">
-                                    <a href="tel:+{{ contact_info.phone }}">{{ contact_info.phone_display }}</a>
+                                    <span class="me-2">{{ svg src="phone-solid" class="icon" }}</span><a href="tel:+{{ contact_info.phone }}">{{ contact_info.phone_display }}</a>
                                 </p>
                             {{ /if }}
                             {{ if contact_info.mobile }}
                                 <p class="mb-0">
-                                    <a href="tel:+{{ contact_info.mobile }}">{{ contact_info.mobile_display }}</a>
+                                    <span class="me-2">{{ svg src="mobile-screen-button-solid" class="icon" }}</span><a href="tel:+{{ contact_info.mobile }}">{{ contact_info.mobile_display }}</a>
                                 </p>
                             {{ /if }}
                         </div>

@@ -104,13 +104,14 @@ fields:
       display: 'Open In New Tab'
       type: toggle
   -
+    handle: options
     field:
       display: 'View Options'
       type: revealer
       mode: toggle
       instructions: 'Animate & Schedule Options'
-    handle: options
   -
+    handle: animate_options
     field:
       fullscreen: false
       always_save: true
@@ -148,8 +149,8 @@ fields:
             width: 50
             unless:
               $parent.wrap_options.enabled: 'equals false'
-    handle: animate_options
   -
+    handle: schedule_options
     field:
       fullscreen: false
       always_save: true
@@ -172,4 +173,3 @@ fields:
             display: End
             width: 50
           handle: end
-    handle: schedule_options

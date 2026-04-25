@@ -9,27 +9,69 @@
                     <h2>Contact Details</h2>
                     {{ if contact_info.phone }}
                         <h3>Phone</h3>
-                        <p><a href="tel:+{{ contact_info.phone }}">{{ contact_info.phone_display }}</a></p>
+                        <div class="d-flex">
+                            <div class="contact-icon me-2">
+                                {{ svg src="phone-solid" class="icon" }}
+                            </div>
+                            <div class="contact-data">
+                                <p class="mb-0"><a href="tel:+{{ contact_info.phone }}">{{ contact_info.phone_display }}</a></p>
+                            </div>
+                        </div>
                     {{ /if }}
                     {{ if contact_info.mobile }}
                         <h3>Mobile</h3>
-                        <p><a href="tel:+{{ contact_info.mobile }}">{{ contact_info.mobile_display }}</a></p>
+                        <div class="d-flex">
+                            <div class="contact-icon me-2">
+                                {{ svg src="mobile-screen-button-solid" class="icon" }}
+                            </div>
+                            <div class="contact-data">
+                                <p class="mb-0"><a href="tel:+{{ contact_info.mobile }}">{{ contact_info.mobile_display }}</a></p>
+                            </div>
+                        </div>
                     {{ /if }}
                     {{ if contact_info.email }}
                         <h3>Email</h3>
-                        <p><a href="mailto:{{ contact_info.email }}">{{ contact_info.email }}</a></p>
+                        <div class="d-flex">
+                            <div class="contact-icon me-2">
+                                {{ svg src="envelope-solid" class="icon" }}
+                            </div>
+                            <div class="contact-data">
+                                <p class="mb-0"><a href="mailto:{{ contact_info.email }}">{{ contact_info.email }}</a></p>
+                            </div>
+                        </div>
                     {{ /if }}
                     {{ if contact_info.address }}
                         <h3>Address</h3>
-                        <p>{{ contact_info.address | nl2br }}</p>
+                        <div class="d-flex">
+                            <div class="contact-icon me-2">
+                                {{ svg src="location-dot-solid" class="icon" }}
+                            </div>
+                            <div class="contact-data">
+                                <p class="mb-0">{{ contact_info.address | nl2br }}</p>
+                            </div>
+                        </div>
                     {{ /if }}
                     {{ if contact_info.hours }}
                         <h3>Operating Hours</h3>
-                        <p>{{ contact_info.hours }}</p>
+                        <div class="d-flex">
+                            <div class="contact-icon me-2">
+                                {{ svg src="clock-solid" class="icon" }}
+                            </div>
+                            <div class="contact-data">
+                                <p class="mb-0">{{ contact_info.hours | nl2br }}</p>
+                            </div>
+                        </div>
                     {{ /if }}
                     {{ if contact_info.facebook }}
                         <h3>Facebook</h3>
-                        <p><a href="{{ contact_info.facebook }}" target="_blank">/carintel</a></p>
+                        <div class="d-flex">
+                            <div class="contact-icon me-2">
+                                {{ svg src="facebook-f-brands-solid" class="icon" }}
+                            </div>
+                            <div class="contact-data">
+                                <p class="mb-0"><a href="{{ contact_info.facebook }}" target="_blank">/carintel</a></p>
+                            </div>
+                        </div>
                     {{ /if }}
                     
                 </div>

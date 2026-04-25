@@ -5,7 +5,9 @@
 @import "../../node_modules/animate.css/source/fading_entrances/fadeInRight";
 @import "../../node_modules/animate.css/source/fading_entrances/fadeInUp";
 @import "../../node_modules/bootstrap/scss/bootstrap";
+@import "../../node_modules/glightbox/dist/css/glightbox";
 /*! purgecss start ignore */
 /*! purgecss end ignore */
+@import "_fix";
 @import "_swiper";
 @import "_site";

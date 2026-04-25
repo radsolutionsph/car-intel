@@ -1,4 +1,5 @@
 import "./_bootstrap"
 import "./_responsiveimages"
+import "./_lightbox"
 import "./_swiper"
 import "./_site"

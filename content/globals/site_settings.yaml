@@ -2,6 +2,7 @@ title: 'Site Settings'
 data:
   site_title: 'Lorem Ipsum'
   business_name: 'Lorem Ipsum Industries'
+  popup_maximum: 2048
   footer:
     -
       type: paragraph

@@ -6,20 +6,11 @@ composition_name: pages
 show_in_nav: true
 titlestrip_option: default
 updated_by: 687eae95-1da6-45a1-a0a3-a15c62074aa2
-updated_at: 1776765513
+updated_at: 1776864850
 composition:
   -
     id: mo8g1pvh
     rich_text:
-      -
-        type: heading
-        attrs:
-          textAlign: left
-          level: 2
-        content:
-          -
-            type: text
-            text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec semper vel lectus in eleifend. Integer et tempor quam. Sed condimentum orci at nisi semper tristique. '
       -
         type: paragraph
         attrs:
@@ -212,10 +203,11 @@ composition:
   -
     id: mo8gakfw
     button_text: 'Contact Now'
-    alignment: center
     link_type: page
     page: 76684dea-97c0-440e-b069-819ceefa8e0a
     new_tab: false
     type: custom_button
     enabled: true
+    alignment: center
+meta_description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec semper vel lectus in eleifend. Integer et tempor quam. Sed condimentum orci at nisi semper.'
 ---
