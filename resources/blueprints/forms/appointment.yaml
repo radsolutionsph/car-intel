@@ -1,0 +1,67 @@
+tabs:
+  main:
+    display: Main
+    sections:
+      -
+        fields:
+          -
+            handle: name
+            field:
+              display: Name
+              type: text
+              validate:
+                - required
+          -
+            handle: phone
+            field:
+              display: Phone
+              type: text
+              validate:
+                - required
+          -
+            handle: email
+            field:
+              input_type: email
+              display: Email
+              type: text
+              validate:
+                - required
+                - email
+          -
+            handle: vehicle_model
+            field:
+              type: text
+              display: 'Vehicle Model'
+              validate:
+                - required
+          -
+            handle: year_model
+            field:
+              input_type: number
+              type: text
+              display: 'Year Model'
+              validate:
+                - required
+          -
+            handle: service_needed
+            field:
+              type: text
+              display: 'Service Needed'
+              validate:
+                - required
+          -
+            handle: preferred_date
+            field:
+              input_type: date
+              type: text
+              display: 'Preferred Date'
+              validate:
+                - required
+          -
+            handle: preferred_time
+            field:
+              input_type: time
+              type: text
+              display: 'Preferred Time'
+              validate:
+                - required
