@@ -4,8 +4,8 @@ blueprint: page
 title: Transmission
 composition_name: pages
 show_in_nav: true
-parent: c0037f26-03d4-46a9-ab28-827370a6df6d
 titlestrip_option: default
 updated_by: 687eae95-1da6-45a1-a0a3-a15c62074aa2
-updated_at: 1775845655
+updated_at: 1779854514
+meta_description: 'Smart transmission diagnostics, fluid services, and repairs in Kawit, Cavite. Car Intel catches issues early to save you time and money.'
 ---

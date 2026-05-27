@@ -6,7 +6,7 @@ composition_name: pages
 show_in_nav: true
 titlestrip_option: default
 updated_by: 687eae95-1da6-45a1-a0a3-a15c62074aa2
-updated_at: 1776864850
+updated_at: 1778865555
 composition:
   -
     id: mo8g1pvh
@@ -204,7 +204,7 @@ composition:
     id: mo8gakfw
     button_text: 'Contact Now'
     link_type: page
-    page: 76684dea-97c0-440e-b069-819ceefa8e0a
+    linked_page: 76684dea-97c0-440e-b069-819ceefa8e0a
     new_tab: false
     type: custom_button
     enabled: true

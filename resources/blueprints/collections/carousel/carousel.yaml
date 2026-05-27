@@ -39,6 +39,8 @@ tabs:
               remove_empty_nodes: false
               type: bard
               display: Caption
+          -
+            import: block_custom_button
   sidebar:
     display: Sidebar
     sections:

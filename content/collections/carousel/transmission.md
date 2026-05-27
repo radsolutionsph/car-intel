@@ -1,7 +1,8 @@
 ---
-id: d4557619-6cff-4e1e-b233-b2dc6b865430
+id: f8da5b2f-45d3-4c8c-95cb-7f9184b23547
 blueprint: carousel
-title: Engine
+title: Transmission
+image: carousel/transmission-2.jpg
 caption:
   -
     type: heading
@@ -11,12 +12,12 @@ caption:
     content:
       -
         type: text
-        text: Power
+        text: 'Shift '
       -
         type: hardBreak
       -
         type: text
-        text: 'Starts Here'
+        text: Smarter
   -
     type: heading
     attrs:
@@ -25,12 +26,11 @@ caption:
     content:
       -
         type: text
-        text: 'Smarter Engine Care. Better Performance.'
+        text: 'Intelligent Transmission Service'
 updated_by: 687eae95-1da6-45a1-a0a3-a15c62074aa2
-updated_at: 1778865456
-image: carousel/engine-1.jpg
+updated_at: 1778867764
 button_text: 'Learn More'
 link_type: page
-linked_page: f2cf2bda-bc71-4e0f-b442-c9b43cce79b9
 new_tab: false
+linked_page: 4f7c0d2e-ccb3-47c4-801b-5015e328b5f8
 ---

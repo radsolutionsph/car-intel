@@ -4,22 +4,12 @@
     {{ $class = $class + ' ' + $alignmentClass }}
 {{ /if }}
 
-{{ if link_type == 'page' }}
-    {{ $button_link = {{page:url}} }}
-{{ elseif link_type == 'asset' }}
-    {{ $button_link = '{asset}' }}
-{{ elseif link_type == 'phone' }}
-    {{ $button_link = 'tel:+{phone}' }}
-{{ elseif link_type == 'email' }}
-    {{ $button_link = 'mailto:{email}' }}
-{{ elseif link_type == 'url' }}
-    {{ $button_link = '{url}' }}
-{{ /if }}
 <div class="{{ $class }}">
-    <a href="{{ $button_link }}" class="btn btn-primary"
+    <a href="{{ if link_type == 'page' }}{{ linked_page:url }}{{ elseif link_type == 'asset' }}{{ asset }}{{ elseif link_type == 'phone' }}tel:+{{ phone }}{{ elseif link_type == 'email' }}mailto:{{ email }}{{ elseif link_type == 'url' }}{{ url }}{{ /if }}"
+       class="btn btn-primary"
         {{ if new_tab }}target="_blank"{{ /if }}
         {{ if aria_label }}aria-label="{{ aria_label }}" {{ /if }}
     >
-        {{ button_text }}
+        {{ button_text }}{{ svg src="right-arrow" class="icon" }}
     </a>
 </div>

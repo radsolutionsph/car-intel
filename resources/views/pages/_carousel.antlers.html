@@ -2,9 +2,9 @@
     <div class="swiper swiper-initialized swiper-horizontal swiper-backface-hidden" 
         data-scroller="true" 
         data-delay="6000" 
-        data-pagination="false" 
+        data-pagination="true" 
         data-navigation="false" 
-        data-effect="slide" 
+        data-effect="fade" 
         data-speed="800" 
         data-per-view="1" 
         data-per-group="1"
@@ -22,6 +22,7 @@
                             <div>
                                 {{ caption }}
                             </div>
+                            {{ partial:sets/custom_button }}
                         </div>
                     </div>
                 </div>

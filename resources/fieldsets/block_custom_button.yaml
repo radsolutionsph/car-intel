@@ -35,7 +35,7 @@ fields:
       validate:
         - required
   -
-    handle: page
+    handle: linked_page
     field:
       max_items: 1
       collections:

@@ -16,8 +16,13 @@
     display: inline-block;
     transition: all 0.3s ease;
     border-color: $tertiary;
+    border-radius: 0;
     .icon {
-        margin-right: 0.5rem;
+        margin-right: 0;
+        margin-left: 10px;
+        width: 21px;
+        height: auto;
+        vertical-align: -5px;
     }
 }
 
@@ -36,6 +41,11 @@
         .navbar-brand {
             max-width: 215px;
             padding: 0;
+            .icon {
+                margin-top: 1.3rem;
+                width: 13rem;
+                height: unset;
+            }
         }
         .navbar-collapse {
             justify-content: flex-end;
@@ -185,14 +195,45 @@
                     bottom: 0;
                     left: 0;
                     right: 0;
-                    background: linear-gradient(90deg,rgba($primary, 0.6) 0%, rgba(255, 255, 255, 0) 65%);
+                    background: rgba($primary, 0.5);
                     .caption {
-                        max-width: 515px;
+                        // max-width: 515px;
                         h1 {
-                            @include poppins(500,3rem);
-                            color: $font-color;
+                            @include poppins(700,109px, italic);
+                            color: #fff;
+                            text-transform: uppercase;
+                            line-height: 100px;
+                        }
+                        h2 {
+                            @include poppins(700,40px);
+                            color: $secondary;
+                        }
+                        .btn-primary {
+                            margin-top: 1rem;
+                            &:hover {
+                                color: #000;
+                                background-color: #fff;
+                            }
                         }
                     }
+                }
+            }
+        }
+        
+        .swiper-pagination {
+            text-align: end;
+            padding-right: 5%;
+            .swiper-pagination-bullet {
+                width: 15px;
+                height: 20px;
+                background-color: $tertiary;
+                opacity: 1;
+                border-radius: 0;
+                transform: skewX(-30deg);
+                transition: background-color 0.3s ease;
+                margin: 5px;
+                &.swiper-pagination-bullet-active {
+                    background-color: #fff;
                 }
             }
         }
@@ -322,7 +363,7 @@
     }
     .rad-row {
         // margin: 2rem 0;
-        padding: 2rem 0 3rem;
+        padding: 0 0 3rem;
         [class*="col-"] {
             .container {
                 padding: 0;
@@ -343,7 +384,7 @@
             align-items: center;
             .intro-text {
                 h1 {
-                    @include poppins(600,35px);
+                    @include poppins(600,40px);
                     color: #fff;
                     margin-bottom: 1.5rem;
                     margin-top: 0;
@@ -352,14 +393,17 @@
                 p {
                     @include poppins(400,23px);
                     color: #fff;
-                    margin-bottom: 0
+                    margin-bottom: 0;
+                    b {
+                        @include poppins(700,23px);
+                    }
                 }
             }
             .intro-btn {
-                margin-bottom: 3rem;
+                margin-bottom: 1rem;
             }
             .intro-image {
-                margin-bottom: -220px;
+                margin-bottom: -200px;
             }
         }
     }
@@ -407,7 +451,7 @@
                     @include poppins(400,20px);
                     color: #fff;
                     background-color: $tertiary;
-                    border-radius: 5px;
+                    border-radius: 0;
                     padding: 0.5rem 1rem;
                     letter-spacing: -1px;
                 }
@@ -503,6 +547,7 @@
             margin-right: 5%;
             padding: 2rem;
             box-shadow: 0 0 50px 10px rgba(0, 0, 0, 0.1);
+            height: 495px;
             .company {
                 margin-bottom: 0;
                 padding-left: 6rem;
@@ -518,9 +563,9 @@
                 text-transform: uppercase;
                 letter-spacing: -1px;
             }
-            .location-address {
-                max-width: 350px;
-            }
+            // .location-address {
+            //     max-width: 350px;
+            // }
             .btn-primary {
                 width: fit-content;
             }
@@ -592,6 +637,7 @@
         }
     }
 }
+
 .footer {
     margin-top: auto;
     padding: 6rem 0 3rem 0;
@@ -682,3 +728,374 @@
         }
     }
 }
+
+// ========================================
+// RESPONSIVE STYLES
+// ========================================
+
+// Tablet & below (< 992px)
+@media (max-width: 991.98px) {
+    .header {
+        .navbar {
+            height: auto;
+            padding: 1rem 0;
+            .navbar-brand {
+                max-width: 160px;
+            }
+            .navbar-collapse {
+                height: auto;
+                .navbar-nav {
+                    height: auto;
+                    li {
+                        height: auto;
+                        a {
+                            font-size: 17px;
+                            padding: 0.6rem 1rem;
+                            height: auto;
+                        }
+                    }
+                    li.dropdown {
+                        .dropdown-menu {
+                            top: 100%;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .titlestrip {
+        .wrap {
+            min-height: auto;
+            padding: 1.5rem 0;
+            h1, h2, h3, h4, p {
+                font-size: 36px;
+                padding-left: 2rem;
+            }
+        }
+        &.image-titlestrip {
+            img {
+                min-height: 180px;
+                max-height: 220px;
+            }
+            .wrap {
+                width: 100%;
+            }
+        }
+    }
+
+    .carousel {
+        .swiper {
+            .swiper-wrapper {
+                .swiper-slide {
+                    img {
+                        max-height: 520px;
+                        object-position: 70% center;
+                    }
+                    .wrap {
+                        .caption {
+                            max-width: 380px;
+                            h1 {
+                                font-size: 2.2rem;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .content {
+        padding: 40px 0 80px;
+        h1 {
+            font-size: 38px;
+            line-height: 44px;
+        }
+        h2 {
+            font-size: 24px;
+            line-height: 28px;
+        }
+    }
+
+    .home.content {
+        .home-intro {
+            height: auto;
+            padding: 2rem 0;
+            .intro-wrapper {
+                .intro-image {
+                    margin-bottom: 0;
+                    text-align: center;
+                }
+            }
+        }
+        .home-services {
+            .services-header {
+                width: 60%;
+            }
+        }
+        .home-cta {
+            [class*="col-"] {
+                border-right: none;
+                border-bottom: 1px solid $tertiary;
+                &:last-child {
+                    border-bottom: none;
+                }
+            }
+        }
+        .home-location {
+            flex-direction: column;
+            .location-details {
+                width: 100%;
+                margin-right: 0;
+                margin-bottom: 2rem;
+            }
+            .location-map {
+                width: 100%;
+            }
+        }
+    }
+
+    .cta {
+        .cta-img {
+            display: none;
+        }
+    }
+
+    .footer {
+        padding: 4rem 0 2rem;
+        .footer-nav {
+            flex-wrap: wrap;
+            justify-content: flex-start;
+            margin-top: 2rem;
+            .service-nav, .about-nav {
+                margin-right: 3rem;
+                margin-bottom: 2rem;
+            }
+            .call-us-info {
+                width: 100%;
+            }
+        }
+    }
+}
+
+// Mobile (< 768px)
+@media (max-width: 767.98px) {
+    .header {
+        .navbar {
+            .navbar-brand {
+                max-width: 130px;
+            }
+        }
+    }
+
+    .titlestrip {
+        &:before {
+            background: linear-gradient(90deg, rgba(0, 0, 0, 0.9) 60%, rgba(255, 255, 255, 0) 100%);
+        }
+        .wrap {
+            h1, h2, h3, h4, p {
+                font-size: 26px;
+                padding-left: 1rem;
+            }
+        }
+        &.image-titlestrip {
+            img {
+                min-height: 150px;
+                max-height: 180px;
+            }
+        }
+    }
+
+    .carousel {
+        .swiper {
+            .swiper-wrapper {
+                .swiper-slide {
+                    img {
+                        max-height: 360px;
+                    }
+                    .wrap {
+                        background: linear-gradient(90deg, rgba($primary, 0.75) 0%, rgba(255, 255, 255, 0) 90%);
+                        .caption {
+                            max-width: 85%;
+                            h1 {
+                                font-size: 1.6rem;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .content {
+        padding: 30px 0 60px;
+        h1 {
+            font-size: 30px;
+            line-height: 36px;
+        }
+        h2 {
+            font-size: 22px;
+            line-height: 26px;
+        }
+        p {
+            font-size: 16px;
+        }
+        blockquote {
+            margin: 0 1rem;
+            padding: 1rem;
+        }
+    }
+
+    .home.content {
+        .home-intro {
+            .intro-wrapper {
+                .intro-text {
+                    h1 {
+                        font-size: 26px;
+                        line-height: 30px;
+                    }
+                    p {
+                        font-size: 18px;
+                    }
+                }
+                .intro-btn {
+                    text-align: left !important;
+                    margin-bottom: 1.5rem;
+                }
+                .intro-image {
+                    display: none;
+                }
+            }
+        }
+        .home-services {
+            margin-top: 2rem;
+            .services-header {
+                width: 100%;
+                .service-company {
+                    padding-left: 1rem;
+                }
+                h1 {
+                    font-size: 36px;
+                }
+            }
+        }
+        .home-cta {
+            padding: 2rem 0;
+            margin: 2rem 0;
+            [class*="col-"] {
+                .get-quote, .call-us, .message-us {
+                    padding: 2rem 0;
+                    max-width: 100%;
+                    h3 {
+                        font-size: 20px;
+                    }
+                }
+            }
+        }
+    }
+
+    .cta {
+        h1 {
+            font-size: 28px;
+        }
+    }
+
+    .footer {
+        padding: 3rem 0 2rem;
+        .footer-nav {
+            flex-direction: column;
+            .service-nav, .about-nav {
+                margin-right: 0;
+                margin-bottom: 2rem;
+            }
+        }
+    }
+}
+
+// Small mobile (< 576px)
+@media (max-width: 575.98px) {
+    .titlestrip {
+        .wrap {
+            h1, h2, h3, h4, p {
+                font-size: 20px;
+                padding-left: 0.75rem;
+            }
+        }
+    }
+
+    .carousel {
+        .swiper {
+            .swiper-wrapper {
+                .swiper-slide {
+                    img {
+                        max-height: 280px;
+                    }
+                    .wrap {
+                        .caption {
+                            h1 {
+                                font-size: 1.3rem;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .content {
+        padding: 20px 0 40px;
+        h1 {
+            font-size: 26px;
+            line-height: 32px;
+        }
+        h2 {
+            font-size: 20px;
+            line-height: 24px;
+        }
+        h3 {
+            font-size: 18px;
+        }
+    }
+
+    .home.content {
+        .home-services {
+            .services-header {
+                h1 {
+                    font-size: 28px;
+                    line-height: 32px;
+                }
+                h3 {
+                    font-size: 20px;
+                    text-align: left;
+                }
+            }
+        }
+        .home-location {
+            .location-details {
+                padding: 1.5rem;
+                h1 {
+                    font-size: 32px;
+                }
+                .company {
+                    padding-left: 0.75rem;
+                }
+            }
+        }
+    }
+
+    .footer {
+        .footer-nav {
+            .about-nav {
+                ul {
+                    li a {
+                        font-size: 18px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+// ========================================
+// END RESPONSIVE STYLES
+// ========================================

@@ -7,15 +7,15 @@
             <div class="intro-wrapper row h-100">
                 <div class="col-lg-5">
                     <div class="intro-text">
-                        <h1>Catchphrase Text Work in Progress</h1>
+                        <h1>Where Intelligence Meets Every Drive</h1>
                         <p>
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse.
+                            Car Intel brings intelligence to every repair. Expert technicians, cutting-edge diagnostics, and zero guesswork. Just smart, reliable service that keeps you moving.
                         </p>
                     </div>
                 </div>
                 <div class="col-lg-7">
                     <div class="intro-btn text-end">
-                        <a href="{{ link:76684dea-97c0-440e-b069-819ceefa8e0a }}" class="btn btn-primary">Contact Us Today</a>
+                        <a href="{{ link:76684dea-97c0-440e-b069-819ceefa8e0a }}" class="btn btn-primary">Contact Us Today{{ svg src="right-arrow" class="icon" }}</a>
                     </div>
                     <div class="intro-image">
                         {{ asset src="public-images::red-civic.png" }}
@@ -35,102 +35,24 @@
             </div>
             <div class="services-grids">
                 <div class="row">
-                    <div class="col-lg-4">
-                        <div class="service">
-                            <div class="service-title">
-                                Engine Services
-                            </div>
-                            <div class="service-intro">
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse.
-                            </div>
-                            <div class="service-btn-icon">
-                                <a href="{{ link:f2cf2bda-bc71-4e0f-b442-c9b43cce79b9 }}" class="btn btn-primary">Learn More {{ svg src="right-arrow" class="icon" }}</a>
-                                {{ asset src="public-images::service-icon.png" }}
-                                    <img class="img-fluid" src="{{ url }}" alt="Engine Services">
-                                {{ /asset }}
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4">
-                        <div class="service">
-                            <div class="service-title">
-                                Transmission Services
-                            </div>
-                            <div class="service-intro">
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse.
-                            </div>
-                            <div class="service-btn-icon">
-                                <a href="{{ link:4f7c0d2e-ccb3-47c4-801b-5015e328b5f8 }}" class="btn btn-primary">Learn More {{ svg src="right-arrow" class="icon" }}</a>
-                                {{ asset src="public-images::service-icon.png" }}
-                                    <img class="img-fluid" src="{{ url }}" alt="Transmission Services">
-                                {{ /asset }}
+                    {{ nav from="/services" }}
+                        <div class="col-lg-4">
+                            <div class="service">
+                                <div class="service-title">
+                                    {{ title }}
+                                </div>
+                                <div class="service-intro">
+                                    {{ meta_description }}
+                                </div>
+                                <div class="service-btn-icon">
+                                    <a href="{{ url }}" class="btn btn-primary">Learn More {{ svg src="right-arrow" class="icon" }}</a>
+                                    {{ asset src="public-images::{slug}-service.png" }}
+                                        <img class="img-fluid" src="{{ url }}" alt="Engine Services">
+                                    {{ /asset }}
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="col-lg-4">
-                        <div class="service">
-                            <div class="service-title">
-                                Brake Repair Services
-                            </div>
-                            <div class="service-intro">
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse.
-                            </div>
-                            <div class="service-btn-icon">
-                                <a href="{{ link:c13387d7-6bca-4b31-a880-042b920d9c54 }}" class="btn btn-primary">Learn More {{ svg src="right-arrow" class="icon" }}</a>
-                                {{ asset src="public-images::service-icon.png" }}
-                                    <img class="img-fluid" src="{{ url }}" alt="Brake Repair Services">
-                                {{ /asset }}
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4">
-                        <div class="service">
-                            <div class="service-title">
-                                Aircon Services
-                            </div>
-                            <div class="service-intro">
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse.
-                            </div>
-                            <div class="service-btn-icon">
-                                <a href="{{ link:b042c7ad-d163-4ef0-b4d8-cb47bad28e56 }}" class="btn btn-primary">Learn More {{ svg src="right-arrow" class="icon" }}</a>
-                                {{ asset src="public-images::service-icon.png" }}
-                                    <img class="img-fluid" src="{{ url }}" alt="Aircon Services">
-                                {{ /asset }}
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4">
-                        <div class="service">
-                            <div class="service-title">
-                                Tires and Wheels
-                            </div>
-                            <div class="service-intro">
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse.
-                            </div>
-                            <div class="service-btn-icon">
-                                <a href="{{ link:311e14fb-f8b8-4134-9922-08106604f0f9 }}" class="btn btn-primary">Learn More {{ svg src="right-arrow" class="icon" }}</a>
-                                {{ asset src="public-images::service-icon.png" }}
-                                    <img class="img-fluid" src="{{ url }}" alt="Tires and Wheels Services">
-                                {{ /asset }}
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4">
-                        <div class="service">
-                            <div class="service-title">
-                                Preventive Maitenance Services (PMS)
-                            </div>
-                            <div class="service-intro">
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse.
-                            </div>
-                            <div class="service-btn-icon">
-                                <a href="{{ link:0ca56f10-23ad-43b3-a5e4-b2f28c36ec42 }}" class="btn btn-primary">Learn More {{ svg src="right-arrow" class="icon" }}</a>
-                                {{ asset src="public-images::service-icon.png" }}
-                                    <img class="img-fluid" src="{{ url }}" alt="Engine Services">
-                                {{ /asset }}
-                            </div>
-                        </div>
-                    </div>
+                    {{ /nav }}
                 </div>
             </div>
         </div>
@@ -195,13 +117,32 @@
                 <div class="wrapper">
                     <p class="company">Car Intel</p>
                     <h1>Where to Find Us</h1>
-                    <p class="location-address">Lorem ipsum dolor sit amet consectetur adipisicing elit at <a href="#">{{ contact_info.address }}</a></p>
-                    <p>Operating Hours: {{ contact_info.hours }}</p>
+                    <p class="location-address">Conveniently located in Kawit, Cavite, just minutes from Lancaster and nearby subdivisions. Car Intel serves vehicle owners across Noveleta, Rosario, General Trias, and beyond. <b>Smarter car care, right in your area.</b></p>
+                    {{ if contact_info.address }}
+                        <div class="d-flex">
+                            <div class="contact-icon me-2">
+                                {{ svg src="location-dot-solid" class="icon" }}
+                            </div>
+                            <div class="contact-data">
+                                <p class="mb-0">{{ contact_info.address }}</p>
+                            </div>
+                        </div>
+                    {{ /if }}
+                    {{ if contact_info.hours }}
+                        <div class="d-flex">
+                            <div class="contact-icon me-2">
+                                {{ svg src="clock-solid" class="icon" }}
+                            </div>
+                            <div class="contact-data">
+                                <p class="mb-0">{{ contact_info.hours | nl2br }}</p>
+                            </div>
+                        </div>
+                    {{ /if }}
                 </div>
                 <a href="{{ link:76684dea-97c0-440e-b069-819ceefa8e0a }}" class="btn btn-primary">Contact Us {{ svg src="right-arrow" class="icon" }}</a>
             </div>
             <div class="location-map">
-                <iframe src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3864.3041216002157!2d120.902257!3d14.409623999999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMTTCsDI0JzM0LjciTiAxMjDCsDU0JzA4LjEiRQ!5e0!3m2!1sen!2sph!4v1776172136972!5m2!1sen!2sph" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                <iframe src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3864.3041216002157!2d120.902257!3d14.409623999999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMTTCsDI0JzM0LjciTiAxMjDCsDU0JzA4LjEiRQ!5e0!3m2!1sen!2sph!4v1776172136972!5m2!1sen!2sph" width="600" height="495" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
             </div>
         </div>
     </div>
