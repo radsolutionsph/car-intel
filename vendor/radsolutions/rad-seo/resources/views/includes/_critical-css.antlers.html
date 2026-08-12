@@ -1,0 +1,5 @@
+{{ if environment === 'production' || config.rad-seo.force-critical }}
+    {{ push:head }}
+        {{ rad_critical_css }}
+    {{ /push:head }}
+{{ /if }}

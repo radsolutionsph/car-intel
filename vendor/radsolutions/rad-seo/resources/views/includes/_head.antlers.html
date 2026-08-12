@@ -1,0 +1,9 @@
+{{ push:head }}
+    {{ if meta_description }}
+        <meta name="description" content="{{ meta_description }}">
+    {{ /if }}
+
+    {{ if is_homepage }}
+        {{ rad_structured }}
+    {{ /if }}
+{{ /push:head }}
