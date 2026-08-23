@@ -1,0 +1,13 @@
+.idea
+.vscode
+/vendor
+node_modules
+.DS_Store
+.phpunit.result.cache
+.phpunit.cache
+.php-cs-fixer.cache
+tests/Fakes/Composer/Package/test-package/composer.json
+resources/dist
+resources/dist-frontend
+composer.lock
+.env

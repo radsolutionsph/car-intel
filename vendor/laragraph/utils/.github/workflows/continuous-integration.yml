@@ -1,0 +1,171 @@
+name: "Continuous Integration"
+on:
+  - pull_request
+  - push
+
+jobs:
+  static-code-analysis:
+    name: "Static Code Analysis"
+
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: "Checkout"
+        uses: actions/checkout@v2
+
+      - name: "Install PHP with extensions"
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: 8.3
+
+      - name: "Install locked dependencies with composer"
+        run: composer install --no-interaction --no-progress
+
+      - name: "Run phpstan/phpstan"
+        run: vendor/bin/phpstan analyse --configuration=phpstan.neon --memory-limit=-1
+
+  tests:
+    name: "Tests"
+
+    runs-on: ubuntu-latest
+
+    strategy:
+      fail-fast: false
+      matrix:
+        php-version:
+          - "7.2"
+          - "7.3"
+          - "7.4"
+          - "8.0"
+          - "8.1"
+          - "8.2"
+          - "8.3"
+        laravel-version:
+          - "5.6.*"
+          - "5.7.*"
+          - "5.8.*"
+          - "^6"
+          - "^7"
+          - "^8"
+          - "^9"
+          - "^10"
+          - "^11"
+          - "^12"
+        exclude:
+          - php-version: "7.2"
+            laravel-version: "^8"
+          - php-version: "7.2"
+            laravel-version: "^9"
+          - php-version: "7.2"
+            laravel-version: "^10"
+          - php-version: "7.2"
+            laravel-version: "^11"
+          - php-version: "7.2"
+            laravel-version: "^12"
+          - php-version: "7.3"
+            laravel-version: "^9"
+          - php-version: "7.3"
+            laravel-version: "^10"
+          - php-version: "7.3"
+            laravel-version: "^11"
+          - php-version: "7.3"
+            laravel-version: "^12"
+          - php-version: "7.4"
+            laravel-version: "^9"
+          - php-version: "7.4"
+            laravel-version: "^10"
+          - php-version: "7.4"
+            laravel-version: "^11"
+          - php-version: "7.4"
+            laravel-version: "^12"
+          - php-version: "8.0"
+            laravel-version: "5.6.*"
+          - php-version: "8.0"
+            laravel-version: "5.7.*"
+          - php-version: "8.0"
+            laravel-version: "5.8.*"
+          - php-version: "8.0"
+            laravel-version: "^10"
+          - php-version: "8.0"
+            laravel-version: "^11"
+          - php-version: "8.0"
+            laravel-version: "^12"
+          - php-version: "8.1"
+            laravel-version: "5.6.*"
+          - php-version: "8.1"
+            laravel-version: "5.7.*"
+          - php-version: "8.1"
+            laravel-version: "5.8.*"
+          - php-version: "8.1"
+            laravel-version: "^6"
+          - php-version: "8.1"
+            laravel-version: "^7"
+          - php-version: "8.1"
+            laravel-version: "^11"
+          - php-version: "8.1"
+            laravel-version: "^12"
+          - php-version: "8.2"
+            laravel-version: "5.6.*"
+          - php-version: "8.2"
+            laravel-version: "5.7.*"
+          - php-version: "8.2"
+            laravel-version: "5.8.*"
+          - php-version: "8.2"
+            laravel-version: "^6"
+          - php-version: "8.2"
+            laravel-version: "^7"
+          - php-version: "8.3"
+            laravel-version: "5.6.*"
+          - php-version: "8.3"
+            laravel-version: "5.7.*"
+          - php-version: "8.3"
+            laravel-version: "5.8.*"
+          - php-version: "8.3"
+            laravel-version: "^6"
+          - php-version: "8.3"
+            laravel-version: "^7"
+
+    steps:
+      - name: "Checkout"
+        uses: actions/checkout@v2
+
+      - name: "Install PHP with extensions"
+        uses: shivammathur/setup-php@v2
+        with:
+          coverage: none
+          extensions: mbstring
+          php-version: ${{ matrix.php-version }}
+
+      - name: "Install dependencies with composer"
+        run: composer require illuminate/contracts:${{ matrix.laravel-version }} --no-interaction --prefer-dist
+
+      - name: "Run unit tests with phpunit/phpunit"
+        run: vendor/bin/phpunit
+
+  code-coverage:
+    name: "Code Coverage"
+
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: "Checkout"
+        uses: actions/checkout@v2
+
+      - name: "Install PHP with extensions"
+        uses: shivammathur/setup-php@v2
+        with:
+          coverage: pcov
+          php-version: 8.3
+
+      - name: "Install locked dependencies with composer"
+        run: composer install --no-interaction --no-progress
+
+      - name: "Collect code coverage with Xdebug and phpunit/phpunit"
+        run: vendor/bin/phpunit --coverage-clover=build/logs/clover.xml
+
+      # Not using codecov/codecov-action for now, as the build is prohibitively slow
+      - name: "Download code coverage uploader for Codecov.io"
+        run: curl -s https://codecov.io/bash -o codecov
+
+      - name: "Send code coverage report to Codecov.io"
+        run: bash codecov -t ${{ secrets.CODECOV_TOKEN }}

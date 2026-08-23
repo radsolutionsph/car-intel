@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<phpunit
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:noNamespaceSchemaLocation="https://schema.phpunit.de/10.5/phpunit.xsd"
+    bootstrap="tests/bootstrap.php"
+    colors="true"
+    cacheDirectory=".phpunit.cache"
+>
+  <testsuites>
+    <testsuite name="Unit">
+      <directory>./tests/DebugBar/Tests</directory>
+      <exclude>./tests/DebugBar/Tests/Browser</exclude>
+    </testsuite>
+    <testsuite name="Browser">
+      <directory>./tests/DebugBar/Tests/Browser</directory>
+    </testsuite>
+  </testsuites>
+  <php>
+    <server name="PANTHER_WEB_SERVER_DIR" value="./"/>
+    <server name="PANTHER_DEVTOOLS" value="0"/>
+  </php>
+  <source>
+    <include>
+      <directory>./src/DebugBar/</directory>
+    </include>
+  </source>
+</phpunit>

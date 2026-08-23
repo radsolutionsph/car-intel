@@ -1,0 +1,41 @@
+{
+    "name": "spatie/statamic-responsive-images",
+    "license": "MIT",
+    "type": "statamic-addon",
+    "description": "Responsive Images for Statamic",
+    "autoload": {
+        "psr-4": {
+            "Spatie\\ResponsiveImages\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Spatie\\ResponsiveImages\\Tests\\": "tests"
+        }
+    },
+    "extra": {
+        "statamic": {
+            "name": "Responsive Images",
+            "description": "Responsive Images for Statamic"
+        },
+        "laravel": {
+            "providers": [
+                "Spatie\\ResponsiveImages\\ServiceProvider"
+            ]
+        }
+    },
+    "require": {
+        "statamic/cms": "^5.0"
+    },
+    "require-dev": {
+        "orchestra/testbench": "^6.9|^7.1|^8.0|^9.0",
+        "pestphp/pest": "^1.22",
+        "spatie/pest-plugin-snapshots": "^1.1"
+    },
+    "config": {
+        "allow-plugins": {
+            "pixelfear/composer-dist-plugin": true,
+            "pestphp/pest-plugin": true
+        }
+    }
+}

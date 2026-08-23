@@ -1,0 +1,161 @@
+# Contributing to graphql-php
+
+## Open a Pull Request
+
+If your contribution requires significant or breaking changes, or if you plan to propose a major new feature,
+we recommend you to [create an issue](https://github.com/webonyx/graphql-php/issues/new)
+with a brief proposal and discuss it with us first.
+
+For smaller contributions use this workflow:
+
+1. Fork the project.
+2. Add your features and or bug fixes.
+3. Add tests to ensure your changes work and will continue working.
+4. Check your changes using `composer check`.
+5. Add an entry to the [Changelog's Unreleased section](CHANGELOG.md#unreleased).
+6. Send a pull request.
+
+## Release a New Version
+
+Before you release a new version, make sure to familiarize yourself with:
+
+- [Keep a Changelog](https://keepachangelog.com/en/1.0.0)
+- [Semantic Versioning](https://semver.org/spec/v2.0.0.html)
+- [Previous GitHub Releases](https://github.com/webonyx/graphql-php/releases)
+
+To create a new release, follow these steps:
+
+1. Consider the entries in the [`CHANGELOG unreleased section`](CHANGELOG.md#unreleased), add missing entries if needed
+2. Based on those entries and the previous version, define the next version number and add it to the [`CHANGELOG.md`](CHANGELOG.md)
+3. [Draft a new release](https://github.com/webonyx/graphql-php/releases/new)
+4. Add the version number as both tag and title
+5. Add the changelog entries as the description
+6. Publish the release
+
+## Setup
+
+```sh
+git clone <your-fork-url>
+cd graphql-php
+composer install
+```
+
+## Testing
+
+We ensure the code works and continues to work as expected with [PHPUnit](https://phpunit.de).
+
+Run unit tests:
+
+```sh
+composer test
+```
+
+Some tests have an annotation such as `@see it('<description>')`.
+It references a matching test in the [graphql-js implementation](https://github.com/graphql/graphql-js).
+
+When porting tests that utilize [the `dedent()` test utility from `graphql-js`](https://github.com/graphql/graphql-js/blob/99d6079434/src/__testUtils__/dedent.js),
+we instead use [the PHP native `nowdoc` syntax](https://www.php.net/manual/en/language.types.string.php#language.types.string.syntax.nowdoc).
+If the string contents are in a specific grammar, use an appropriate tag such as `GRAPHQL`, `PHP` or `JSON`:
+
+```php
+self::assertSomePrintedOutputExactlyMatches(
+    <<<'GRAPHQL'
+    type Foo {
+      bar: Baz
+    }
+
+    GRAPHQL,
+    $output
+);
+```
+
+## Coding Standard
+
+We format the code automatically with [php-cs-fixer](https://github.com/friendsofphp/php-cs-fixer).
+
+Apply automatic code style fixes:
+
+```sh
+composer fix
+```
+
+### Multiline Ternary Expressions
+
+Ternary expressions must be spread across multiple lines.
+
+```php
+$foo = $cond
+    ? 1
+    : 2;
+```
+
+### Extensibility
+
+We cannot foresee every possible use case in advance, extending the code should remain possible.
+
+#### `protected` over `private`
+
+Always use class member visibility `protected` over `private`.
+
+#### Late Static Binding
+
+Always use `static::` over `self::` for method calls to enable overriding of static class methods.
+
+#### `final` classes
+
+Prefer `final` classes in [tests](tests), but never use them in [src](src).
+
+## Static Analysis
+
+We validate code correctness with [PHPStan](https://phpstan.org).
+
+Run static analysis:
+
+```sh
+composer stan
+```
+
+Regenerate the [PHPStan baseline](https://phpstan.org/user-guide/baseline):
+
+```sh
+composer baseline
+```
+
+### Type Assertions
+
+When control flow or native types are insufficient to convince the IDE or PHPStan that a value
+is of a certain type, but you know it must be due to some invariant, you may assert its type.
+Prefer `assert()` for simple types and only use `@var` for complex types:
+
+```php
+function identity($value) { return $value; }
+
+$mustBeInt = identity(1);
+assert(is_int($mustBeInt));
+
+/** @var array<string, int> $mustBeArrayOfStrings */
+$mustBeArrayOfStringsToInts = identity(['foo' => 42]);
+```
+
+## Running Benchmarks
+
+We benchmark performance critical code with [PHPBench](https://github.com/phpbench/phpbench).
+
+Check performance:
+
+```sh
+composer bench
+```
+
+## Documentation
+
+We document this library by rendering the Markdown files in [docs](docs) with [MkDocs](https://www.mkdocs.org).
+
+> You may propose changes to the docs via merge requests against the `master` branch.
+> Do not edit the generated HTML files in the `gh-pages` branch directly, they are automatically generated.
+
+Generate the class reference docs:
+
+```sh
+composer docs
+```
