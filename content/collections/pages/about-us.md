@@ -6,7 +6,7 @@ composition_name: pages
 show_in_nav: true
 titlestrip_option: default
 updated_by: 687eae95-1da6-45a1-a0a3-a15c62074aa2
-updated_at: 1778865555
+updated_at: 1790610738
 composition:
   -
     id: mo8g1pvh
@@ -18,7 +18,7 @@ composition:
         content:
           -
             type: text
-            text: 'Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Pellentesque ornare ultricies libero. Maecenas ullamcorper, elit non facilisis dictum, leo magna faucibus urna, vitae consectetur nulla turpis vel lacus. Aenean luctus condimentum mauris, at fringilla augue tristique quis. Maecenas ut posuere ex. Maecenas eget molestie dui. Donec a ante id eros volutpat fringilla vitae vitae eros. Sed non magna ac augue feugiat auctor ut cursus dui. Sed ac turpis eu sem fermentum commodo. Curabitur at tincidunt dolor. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Vivamus dapibus tortor venenatis sem consequat, id semper turpis consectetur. Pellentesque semper turpis eget ante commodo, et porttitor mi lacinia.'
+            text: 'CAR Intel Automotive Service Clinic opened in May 2026 in Kawit, Cavite, with one goal: bring smart, transparent car care to drivers tired of guesswork. As an independent shop, we pair proper diagnostics with honest, judgment-free explanations, so every customer knows exactly what their car needs, and why.'
     type: rich_text
     enabled: true
   -
@@ -209,5 +209,5 @@ composition:
     type: custom_button
     enabled: true
     alignment: center
-meta_description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec semper vel lectus in eleifend. Integer et tempor quam. Sed condimentum orci at nisi semper.'
+meta_description: 'About the Company'
 ---

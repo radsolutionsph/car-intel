@@ -39,14 +39,14 @@
                                 <a href="mailto:{{ contact_info.email }}" class="social-icons">{{ svg src="envelope" class="icon" }}</a>
                             {{ /if }}
                             {{ if contact_info.facebook }}
-                                <a href="{{ contact_info.facebook }}" class="social-icons">{{ svg src="facebook-f" class="icon" }}</a>
+                                <a href="{{ contact_info.facebook }}" target="_blank" rel="noopener noreferrer" class="social-icons">{{ svg src="facebook-f" class="icon" }}</a>
                             {{ /if }}
                         </div>
                     </div>
                     <div class="call-us-info">
                         <div class="contact-info">
                             <h3>Call Us!</h3>
-                            {{ if contact_info.phone }}
+                            {{ if contact_info.phone_display }}
                                 <p class="mb-0">
                                     <span class="me-2">{{ svg src="phone-solid" class="icon" }}</span><a href="tel:+{{ contact_info.phone }}">{{ contact_info.phone_display }}</a>
                                 </p>

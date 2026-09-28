@@ -66,7 +66,7 @@
                             <img class="img-fluid cta-icon" src="{{ url }}" alt="Car Intel Free Quotation">
                         {{ /asset }}
                         <div class="cta-content">
-                            <h3><a href="">Schedule a visit and book your appointment now!</a></h3>
+                            <h3><a href="{{ link:31705ae5-90ed-49b4-ae2a-114646d84890 }}">Schedule a visit and book your appointment now!</a></h3>
                         </div>
                     </div>
                 </div>
@@ -77,7 +77,7 @@
                         {{ /asset }}
                         <div class="cta-content">
                             <h3>Call Us!</h3>
-                            {{ if contact_info.phone }}
+                            {{ if contact_info.phone_display }}
                                 <p class="mb-0">
                                     <span class="me-2">{{ svg src="phone-solid" class="icon" }}</span><a href="tel:+{{ contact_info.phone }}">{{ contact_info.phone_display }}</a>
                                 </p>
@@ -102,7 +102,7 @@
                                     <a href="mailto:{{ contact_info.email }}" class="social-icons">{{ svg src="envelope" class="icon" }}</a>
                                 {{ /if }}
                                 {{ if contact_info.facebook }}
-                                    <a href="{{ contact_info.facebook }}" class="social-icons">{{ svg src="facebook-f" class="icon" }}</a>
+                                    <a href="{{ contact_info.facebook }}" target="_blank" rel="noopener noreferrer" class="social-icons">{{ svg src="facebook-f" class="icon" }}</a>
                                 {{ /if }}
                             </div>
                         </div>
